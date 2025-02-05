@@ -1,4 +1,5 @@
 import Header from "./Header";
+import InvitationInfo from "./InvitationInfo";
 
 export default function StartPage() {
     const mockUserData = {
@@ -38,8 +39,9 @@ export default function StartPage() {
         ]
     }
     return (
-        <div>
+        <div className="">
             <Header greeting={mockUserData.greeting} />
+            <InvitationInfo />
         </div>
     );
 }

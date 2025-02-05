@@ -26,7 +26,7 @@ export default function Header({ greeting }: HeaderProps) {
                 </div>
                 <h1 className="text-6xl font-fellFrench italic mb-8">Adriana &<br />Dorian</h1>
             </div>
-            <GreyButton onClick={() => { }} label="Potwierdź Twoją obecność" />
+            <GreyButton onClick={() => { }} label="Potwierdź Swoją obecność" />
         </header >
     );
 };
