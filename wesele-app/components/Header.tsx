@@ -6,8 +6,10 @@ interface HeaderProps {
 
 import Image from "next/image";
 import GreyButton from "./ui/GreyButton";
+import { useModal } from "./contexts/ModalProvider";
 
 export default function Header({ greeting }: HeaderProps) {
+    const { openModal } = useModal();
     return (
         <header className="h-[80vh] bg-[url('/ai-img-header.png')] bg-cover bg-center  relative">
             <div className="p-8 h-full flex flex-col justify-between text-white">
@@ -26,7 +28,7 @@ export default function Header({ greeting }: HeaderProps) {
                 </div>
                 <h1 className="text-6xl font-fellFrench italic mb-8">Adriana &<br />Dorian</h1>
             </div>
-            <GreyButton onClick={() => { }} label="Potwierdź Swoją obecność" />
+            <GreyButton onClick={() => openModal()} label="Potwierdź Swoją obecność" />
         </header >
     );
 };

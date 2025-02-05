@@ -39,6 +39,7 @@ export default function StartPage() {
             }
         ]
     }
+
     return (
         <div className="">
             <Header greeting={mockUserData.greeting} />
