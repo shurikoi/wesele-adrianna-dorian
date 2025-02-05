@@ -28,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${fellFrench.variable} ${sfPro.variable} antialiased`}
       >
+        <div id="modals-root"/>
         {children}
       </body>
     </html>

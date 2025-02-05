@@ -1,3 +1,4 @@
+import FormRSVP from "./FormRSVP";
 import Header from "./Header";
 import InvitationInfo from "./InvitationInfo";
 
@@ -42,6 +43,7 @@ export default function StartPage() {
         <div className="">
             <Header greeting={mockUserData.greeting} />
             <InvitationInfo />
+            <FormRSVP />
         </div>
     );
 }
