@@ -19,7 +19,7 @@ interface ModalProviderProps {
 }
 
 export default function ModalProvider({ children }: ModalProviderProps) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(true);
     const openModal: ModalContextType["openModal"] = () => setIsModalOpen(true);
     const closeModal: ModalContextType["closeModal"] = () => setIsModalOpen(false);
 
