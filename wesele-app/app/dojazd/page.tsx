@@ -1,3 +1,9 @@
+import WelcomeContainer from "@/components/WelcomeContainer";
+
 export default function Dojazd() {
-    return <h1>hi</h1>
+    return (
+        <WelcomeContainer>
+            <h1>hi</h1>
+        </WelcomeContainer>
+    );
 };
