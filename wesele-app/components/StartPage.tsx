@@ -7,7 +7,7 @@ export default function StartPage() {
     return (
         <>
             <StartWelcomeContainer>
-                {"Adriana &\nDorian"}
+                <div className="mb-8">{"Adriana &\nDorian"}</div>
             </StartWelcomeContainer>
             <InvitationInfo />
             <FormRSVP />

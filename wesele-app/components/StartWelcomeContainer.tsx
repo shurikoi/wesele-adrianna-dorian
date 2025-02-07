@@ -3,7 +3,7 @@
 import { useModal } from "./contexts/ModalProvider";
 import ConfirmButton from "./ui/ConfirmButton";
 import StartWelcomeLayout from "./ui/StartWelcomeLayout";
-import TitleWelcomeContainer from "./ui/TitleWelcomeContainer";
+import TitleWelcome from "./ui/TitleWelcome";
 import WelcomeContentLayout from "./ui/WelcomeContentLayout";
 
 export default function StartWelcomeContainer({ children }: { children: React.ReactNode; }) {
@@ -12,9 +12,9 @@ export default function StartWelcomeContainer({ children }: { children: React.Re
         <div className="h-[80vh] relative">
             <StartWelcomeLayout>
                 <WelcomeContentLayout>
-                    <TitleWelcomeContainer>
+                    <TitleWelcome>
                         {children}
-                    </TitleWelcomeContainer>
+                    </TitleWelcome>
                 </WelcomeContentLayout>
                 <ConfirmButton onClick={() => openModal()} />
             </StartWelcomeLayout>
