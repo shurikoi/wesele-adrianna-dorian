@@ -1,12 +1,14 @@
 import Image from "next/image";
 import WelcomeContentLayout from "./ui/WelcomeContentLayout";
+import { WelcomeImageOption } from "@/lib/types";
 
-export default function WelcomeContainer({ children }: { children: React.ReactNode; }) {
+export default function WelcomeContainer({ children, imageOptionSrc }: { children: React.ReactNode, imageOptionSrc: WelcomeImageOption }) {
+    const imageSrc = `/illustrations/${imageOptionSrc}.svg`;
     return (
         <div className="h-[80vh] w-full relative bg-backgroundPeach">
             <div className="h-full w-full absolute flex items-center justify-center">
                 {/* TODO Image */}
-                <Image src="/illustrations/7.svg" alt="hi" width={200} height={200} />
+                <Image src={imageSrc} alt="hi" width={200} height={200} />
             </div>
             <WelcomeContentLayout>
                 {children}

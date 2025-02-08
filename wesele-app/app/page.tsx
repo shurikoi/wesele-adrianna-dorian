@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <>
             <StartWelcomeContainer>
-                <div className="mb-8">{"Adriana &\nDorian"}</div>
+                <div className="mb-8">Adrianna & Dorian</div>
             </StartWelcomeContainer>
             <InvitationInfo />
             <FormRSVP />

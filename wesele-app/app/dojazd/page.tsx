@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function Dojazd() {
     return (
         <>
-            <WelcomeContainer>
+            <WelcomeContainer imageOptionSrc="7">
                 <TitleWelcomeLayout title="Dojazd" description="czyli dane do ubera" />
             </WelcomeContainer>
             <PageContainer>

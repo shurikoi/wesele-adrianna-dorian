@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adriana & Dorian",
+  title: "Adrianna & Dorian",
   description: "Wesele Adriany i Doriana",
 };
 
