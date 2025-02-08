@@ -5,7 +5,8 @@ export default function WelcomeContainer({ children }: { children: React.ReactNo
     return (
         <div className="h-[80vh] w-full relative bg-backgroundPeach">
             <div className="h-full w-full absolute flex items-center justify-center">
-                <Image src="/illustrations/1.svg" alt="hi" width={200} height={200} />
+                {/* TODO Image */}
+                <Image src="/illustrations/7.svg" alt="hi" width={200} height={200} />
             </div>
             <WelcomeContentLayout>
                 {children}

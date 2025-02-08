@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fellFrench.variable} ${sfPro.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fellFrench.variable} ${sfPro.variable} bg-backgroundPeach antialiased`}
       >
         <GuestDataProvider>
           <ModalProvider>
