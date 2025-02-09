@@ -1,16 +1,21 @@
 'use client';
 
 import { FormButtonsProps, UserChoiceSchema } from "@/lib/types";
+import isChecked from "@/utils/isChecked";
+import updateUserChoices from "@/utils/updateUserChoices";
 import toast from "react-hot-toast";
 
-export default function FormButtons({ buttons, userChoice, setUserChoice }: FormButtonsProps) {
+export default function FormButtons({ buttons, id, userChoices, setUserChoices }: FormButtonsProps) {
     const handleChoice = (element: React.ChangeEvent<HTMLInputElement>) => {
         const parsedValue = UserChoiceSchema.safeParse(element.target.value);
         if (!parsedValue.success) {
             toast.error('Błąd: nieprawidłowa wartość. Spróbuj ponownie.');
             return;
-        };
-        setUserChoice(parsedValue.data);
+        }
+
+        setUserChoices((prevChoices) => {
+            return updateUserChoices(prevChoices, id, parsedValue.data);
+        });
     };
 
     return (
@@ -27,7 +32,7 @@ export default function FormButtons({ buttons, userChoice, setUserChoice }: Form
                         value={button.value}
                         className="appearance-none"
                         onChange={handleChoice}
-                        checked={userChoice === button.value} />
+                        checked={isChecked(button.value, userChoices, id)} />
                 </label>
             ))}
         </div>

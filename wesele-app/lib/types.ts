@@ -4,6 +4,14 @@ export const UserChoiceSchema = z.enum(['yes', 'no']);
 
 export type UserChoice = z.infer<typeof UserChoiceSchema>;
 
+export const UserChoicesSchema = z.object(
+    {
+        id: z.string().uuid(),
+        answer: z.union([z.literal('yes'), z.literal('no')])
+    }).array().optional();
+
+export type UserChoices = z.infer<typeof UserChoicesSchema>;
+
 export interface FormButton {
     title: string;
     id: string;
@@ -11,12 +19,14 @@ export interface FormButton {
 }
 
 export interface FormButtonsProps {
+    id: string;
     buttons: FormButton[];
-    userChoice: UserChoice | undefined;
-    setUserChoice: (value: UserChoice) => void;
+    userChoices: UserChoices;
+    setUserChoices: React.Dispatch<React.SetStateAction<UserChoices>>;
 }
 
 export interface ModalQuestionProps extends FormButtonsProps {
+    id: string,
     question: string;
 }
 
