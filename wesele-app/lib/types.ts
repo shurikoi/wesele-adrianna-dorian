@@ -34,6 +34,8 @@ export const welcomeImagesSchema = z.enum(['1', '2', '3', '4', '5', '6', '7']);
 
 export type WelcomeImageOption = z.infer<typeof welcomeImagesSchema>;
 
+export type StatesRSVP = 'questions' | 'summary'
+
 // _______________________________________________________ IN PROGRESS _______________________________________________________
 interface Guest {
     id: string;
