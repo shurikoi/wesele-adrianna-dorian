@@ -1,5 +1,5 @@
-export default function TitleWelcome({ children }: { children: React.ReactNode }) {
+export default function TitleWelcome({ children, className }: { children: React.ReactNode, className?: React.ComponentProps<'div'>['className']; }) {
     return (
-        <h1 className="text-6xl font-fellFrench ">{children}</h1>
+        <h1 className={`text-6xl font-fellFrench ${className}`}>{children}</h1>
     );
 };

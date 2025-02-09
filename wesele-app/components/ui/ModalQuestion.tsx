@@ -1,5 +1,5 @@
 import { ModalQuestionProps } from "@/lib/types";
-import FormButtons from "./FormButtons";
+import FormButtons from "./buttons/FormButtons";
 
 export default function ModalQuestion({ question, buttons, userChoice, setUserChoice }: ModalQuestionProps) {
     return (

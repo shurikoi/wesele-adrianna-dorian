@@ -4,8 +4,6 @@ import { FormButtonsProps, UserChoiceSchema } from "@/lib/types";
 import toast from "react-hot-toast";
 
 export default function FormButtons({ buttons, userChoice, setUserChoice }: FormButtonsProps) {
-    // const [userChoice, setUserChoice] = useState<UserChoice>();
-
     const handleChoice = (element: React.ChangeEvent<HTMLInputElement>) => {
         const parsedValue = UserChoiceSchema.safeParse(element.target.value);
         if (!parsedValue.success) {
@@ -23,7 +21,6 @@ export default function FormButtons({ buttons, userChoice, setUserChoice }: Form
                     htmlFor={button.id}
                     className="border-2 rounded-full py-4 w-full has-[:checked]:border-gray-500">
                     {button.title}
-                    {/* Akceptuję z radością */}
                     <input
                         type="radio"
                         id={button.id}

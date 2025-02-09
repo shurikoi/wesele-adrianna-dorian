@@ -1,15 +1,15 @@
 'use client';
 
 import { useModal } from "./contexts/ModalProvider";
-import ConfirmButton from "./ui/ConfirmButton";
+import ConfirmButton from "./ui/buttons/ConfirmButton";
 import StartWelcomeLayout from "./ui/StartWelcomeLayout";
 import TitleWelcome from "./ui/TitleWelcome";
 import WelcomeContentLayout from "./ui/WelcomeContentLayout";
 
-export default function StartWelcomeContainer({ children }: { children: React.ReactNode; }) {
+export default function StartWelcomeContainer({ children, className }: { children: React.ReactNode, className?: React.ComponentProps<'div'>['className']; }) {
     const { openModal } = useModal();
     return (
-        <div className="h-[80vh] relative">
+        <div className={`h-[80vh] relative ${className}`}>
             <StartWelcomeLayout>
                 <WelcomeContentLayout>
                     <TitleWelcome>

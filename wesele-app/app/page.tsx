@@ -5,8 +5,8 @@ import StartWelcomeContainer from '@/components/StartWelcomeContainer';
 export default function Home() {
     return (
         <>
-            <StartWelcomeContainer>
-                <div className="mb-8">Adrianna & Dorian</div>
+            <StartWelcomeContainer className="mb-8 italic">
+                Adrianna & Dorian
             </StartWelcomeContainer>
             <InvitationInfo />
             <FormRSVP />
