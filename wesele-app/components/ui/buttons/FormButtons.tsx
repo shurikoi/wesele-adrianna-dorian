@@ -19,12 +19,12 @@ export default function FormButtons({ buttons, id, userChoices, setUserChoices }
     };
 
     return (
-        <div className="flex flex-col justify-center items-center gap-[1.1rem] text-black font-sfPro text-md text-center">
+        <div className="flex justify-center items-center gap-[0.5rem] text-black font-sfPro text-md text-center">
             {buttons.map((button, index) => (
                 <label
                     key={index}
                     htmlFor={button.id}
-                    className="border-2 rounded-full py-4 w-full has-[:checked]:border-gray-500">
+                    className="border-2 rounded-full cursor-pointer py-4 w-full has-[:checked]:border-gray-500">
                     {button.title}
                     <input
                         type="radio"

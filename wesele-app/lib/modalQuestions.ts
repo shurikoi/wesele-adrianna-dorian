@@ -10,13 +10,13 @@ interface modalQuestions {
 export const modalQuestions: modalQuestions[] = [
     {
         id: uuidv4(),
-        question: 'Czy będziecie mogli dołączyć do nas na naszym weselu?',
+        question: 'Czy będzie Pan z Towarzyszem?',
         buttons: [{
-            title: 'Tak, z radością',
+            title: 'Tak',
             id: 'accept',
             value: 'yes'
         }, {
-            title: 'Niestety, nie będziemy mogli',
+            title: 'Nie',
             id: 'decline',
             value: 'no'
         }],
