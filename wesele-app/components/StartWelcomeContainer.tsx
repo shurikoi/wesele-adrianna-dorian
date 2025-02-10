@@ -9,7 +9,7 @@ import WelcomeContentLayout from "./ui/WelcomeContentLayout";
 export default function StartWelcomeContainer({ children, className }: { children: React.ReactNode, className?: React.ComponentProps<'div'>['className']; }) {
     const { openModal } = useModal();
     return (
-        <div className={`h-[80vh] relative ${className}`}>
+        <div className={`h-[80vh] relative ${className} md:flex md:justify-center`}>
             <StartWelcomeLayout>
                 <WelcomeContentLayout>
                     <TitleWelcome>

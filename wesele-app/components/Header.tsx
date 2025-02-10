@@ -4,9 +4,11 @@ import Image from "next/image";
 import { useGuestData } from "./contexts/GuestDataProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
     const { guestData } = useGuestData();
+    const [isOpened, setIsOpened] = useState(false);
 
     const pages = ['Dojazd', 'Nocleg', 'Szczegóły', 'Stoły', 'Zdjęcia'];
 
@@ -17,9 +19,12 @@ export default function Header() {
         <header className="h-full text-white bg-transparent">
             <div className="text-[16px] flex items-center justify-between">
                 <div className="font-fellFrench italic text-3xl"><Link href={'/'}>&</Link></div>
-                <div className="flex">
+                <div className="flex relative" onClick={() => setIsOpened(!isOpened)}>
                     {guestData.greeting}
                     <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="heart" width={11} height={11}></Image>
+                    <div className={`absolute top-0 right-0 mt-7 p-2 rounded-xl bg-[#cec4aa] ${!isOpened && 'opacity-0'}`}>
+                        <div className="m-1 w-[9rem] text-[#3d2f0a] rounded-xl p-3 cursor-pointer hover:bg-white/50">Wyloguj się</div>
+                    </div>
                 </div>
             </div>
             <div className="text-[14px] flex justify-around pt-5">
