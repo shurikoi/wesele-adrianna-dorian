@@ -30,11 +30,11 @@ export interface ModalQuestionProps extends FormButtonsProps {
     question: string;
 }
 
-export const welcomeImagesSchema = z.enum(['1', '2', '3', '4', '5', '6', '7']);
+export const welcomeImagesSchema = z.enum(['1', '2', '3', '4', '5', '6', '7', '8']);
 
 export type WelcomeImageOption = z.infer<typeof welcomeImagesSchema>;
 
-export type StatesRSVP = 'questions' | 'summary'
+export type StatesRSVP = 'questions' | 'summary';
 
 // _______________________________________________________ IN PROGRESS _______________________________________________________
 interface Guest {
@@ -60,4 +60,15 @@ export interface MockGuestData {
     song: string | null;
     createdAt: string;
     guests: Guest[];
+}
+
+export interface DropDownContainer {
+    title: string;
+    content: string[];
+}
+
+export type ContentDropdownItem = DropDownContainer["content"]
+
+export interface DropdownItem extends DropDownContainer {
+    id: string
 }

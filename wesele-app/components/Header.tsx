@@ -5,6 +5,7 @@ import { useGuestData } from "./contexts/GuestDataProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { latinize } from "modern-diacritics";
 
 export default function Header() {
     const { guestData } = useGuestData();
@@ -19,18 +20,18 @@ export default function Header() {
         <header className="h-full text-white bg-transparent">
             <div className="text-[16px] flex items-center justify-between">
                 <div className="font-fellFrench italic text-3xl"><Link href={'/'}>&</Link></div>
-                <div className="flex relative" onClick={() => setIsOpened(!isOpened)}>
+                <div className="flex relative cursor-pointer" onClick={() => setIsOpened(!isOpened)}>
                     {guestData.greeting}
-                    <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="heart" width={11} height={11}></Image>
-                    <div className={`absolute top-0 right-0 mt-7 p-2 rounded-xl bg-[#cec4aa] ${!isOpened && 'opacity-0'}`}>
+                    <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="arrow" width={11} height={11}></Image>
+                    {/* <div className={`absolute top-0 right-0 mt-7 p-2 rounded-xl bg-[#cec4aa] ${!isOpened && 'opacity-0 none'}`}>
                         <div className="m-1 w-[9rem] text-[#3d2f0a] rounded-xl p-3 cursor-pointer hover:bg-white/50">Wyloguj się</div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="text-[14px] flex justify-around pt-5">
                 {pages.map((page, index) => (
-                    <Link key={index} href={`/${page.toLowerCase()}`}>
-                        <span className={currentPage === page.toLowerCase() ? 'font-bold' : ''}>{page}</span>
+                    <Link key={index} href={`/${latinize(page, { lowerCase: true })}`}>
+                        <span className={currentPage === latinize(page, { lowerCase: true }) ? 'font-bold' : ''}>{page}</span>
                     </Link>
                 ))}
             </div>

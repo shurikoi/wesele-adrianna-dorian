@@ -1,5 +1,5 @@
-export default function TitleWelcomeDescription({ children }: { children: React.ReactNode; }) {
+export default function TitleWelcomeDescription({ children, italic = true }: { children: React.ReactNode; italic?: boolean }) {
     return (
-        <h2 className="text-2xl font-fellFrench italic mb-6">{children}</h2>
+        <h2 className={`text-2xl font-fellFrench mb-6 ${italic && 'italic'}`}>{children}</h2>
     );
 };
