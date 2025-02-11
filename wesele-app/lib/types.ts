@@ -72,3 +72,9 @@ export type ContentDropdownItem = DropDownContainer["content"]
 export interface DropdownItem extends DropDownContainer {
     id: string
 }
+
+export interface AgendaData {
+    id: string, 
+    time: string,
+    name: string,
+}

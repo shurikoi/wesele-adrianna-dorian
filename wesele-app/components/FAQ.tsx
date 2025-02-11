@@ -4,7 +4,7 @@ import TitleWelcome from "./ui/TitleWelcome";
 
 export default function FAQ() {
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-4">
             <div className="mb-2">
                 <TitleWelcome>FAQ</TitleWelcome>
                 <div className="font-fellFrench text-2xl">Często zadawane pytania</div>

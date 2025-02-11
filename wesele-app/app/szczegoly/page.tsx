@@ -1,3 +1,4 @@
+import Agenda from "@/components/Agenda";
 import FAQ from "@/components/FAQ";
 import Menu from "@/components/Menu";
 import PageContainer from "@/components/ui/PageContainer";
@@ -11,8 +12,11 @@ export default function Szczegoly() {
                 <TitleWelcomeLayout title="Szczegoły" description="wszystko, co musisz wiedzieć" />
             </WelcomeContainer>
             <PageContainer>
-                <Menu />
-                <FAQ />
+                <div className="flex flex-col gap-16">
+                    <Agenda />
+                    <Menu />
+                    <FAQ />
+                </div>
             </PageContainer>
         </>
     );

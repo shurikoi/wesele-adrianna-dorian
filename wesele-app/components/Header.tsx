@@ -28,9 +28,9 @@ export default function Header() {
                     </div> */}
                 </div>
             </div>
-            <div className="text-[14px] flex justify-around pt-5">
+            <div className="text-[14px] flex justify-around pt-2">
                 {pages.map((page, index) => (
-                    <Link key={index} href={`/${latinize(page, { lowerCase: true })}`}>
+                    <Link key={index} className="p-3" href={`/${latinize(page, { lowerCase: true })}`}>
                         <span className={currentPage === latinize(page, { lowerCase: true }) ? 'font-bold' : ''}>{page}</span>
                     </Link>
                 ))}
