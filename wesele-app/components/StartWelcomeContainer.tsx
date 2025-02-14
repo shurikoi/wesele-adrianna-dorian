@@ -16,7 +16,6 @@ export default function StartWelcomeContainer({ children, className }: { childre
             <div className="absolute top-0 right-0 h-full w-full md:hidden">
                 <div className="h-full bg-[url('/ai-img-header.png')] bg-cover bg-center"></div>
             </div>
-            {/* <StartWelcomeLayout> */}
                 <WelcomeContentLayout>
                     <TitleWelcome>
                         {children}
@@ -24,7 +23,6 @@ export default function StartWelcomeContainer({ children, className }: { childre
                 </WelcomeContentLayout>
 
                 <ConfirmButton onClick={() => openModal()} />
-            {/* </StartWelcomeLayout> */}
         </div>
     );
 };

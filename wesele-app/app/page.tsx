@@ -10,9 +10,6 @@ export default function Home() {
             <StartWelcomeContainer className="mb-8 italic">
                 Adrianna & Dorian
             </StartWelcomeContainer>
-            {/* <WelcomeContainer imageOptionSrc="9">
-                <TitleWelcomeLayout title="Adrianna & Dorian" description="" />
-            </WelcomeContainer>  */}
             <InvitationInfo />
             <FormRSVP />
         </>);

@@ -40,25 +40,19 @@ export type StatesRSVP = 'questions' | 'summary';
 interface Guest {
     id: string;
     name: string;
-    type: string;
+    type: 'adult' | 'child';
     rsvp: boolean;
-    rsvpTime: string;
-    table: number;
-    diet: string;
-    accomodation: string;
-    order: number;
+    rsvpTime?: string;
+    table: number | null;
     createdAt: string;
 }
 
 export interface MockGuestData {
     id: string;
     code: string;
-    content: string;
-    type: string;
-    order: number;
-    greeting: string;
-    song: string | null;
+    type: 'pair' | 'single';
     createdAt: string;
+    accomodation: boolean;
     guests: Guest[];
 }
 
