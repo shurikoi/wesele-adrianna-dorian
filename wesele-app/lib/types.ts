@@ -37,24 +37,50 @@ export type WelcomeImageOption = z.infer<typeof welcomeImagesSchema>;
 export type StatesRSVP = 'questions' | 'summary';
 
 // _______________________________________________________ IN PROGRESS _______________________________________________________
-interface Guest {
+
+interface RSVP {
     id: string;
-    name: string;
-    type: 'adult' | 'child';
     rsvp: boolean;
     rsvpTime?: string;
-    table: number | null;
-    createdAt: string;
+    createdAt: number;
+    updatedAt: number;
+}
+
+interface Accomodation {
+    id: string;
+    accomodation: boolean;
+    accomodationResponse?: boolean;
+    createdAt: number;
+    updatedAt: number;
+}
+
+interface Table {
+    id: string;
+    number: number;
+    capacity: number;
+}
+
+interface Guest {
+    id: string;                // Unique guest ID
+    name: string;              // Guest's name
+    type: 'adult' | 'child';   // Type of guest (adult or child)
+    table?: Table;           // Reference to the Table collection
+    rsvp?: RSVP;            // Reference to the RSVP information
+    accomodation: Accomodation;    // Reference to the accommodation info
+    createdAt: number;
+    updatedAt: number;
 }
 
 export interface MockGuestData {
     id: string;
     code: string;
-    type: 'pair' | 'single';
-    createdAt: string;
-    accomodation: boolean;
+    // type: 'pair' | 'single';
     guests: Guest[];
+    createdAt: number;
+    updatedAt: number;
 }
+
+//  ______________________________________________________________________
 
 export interface DropDownContainer {
     title: string;
