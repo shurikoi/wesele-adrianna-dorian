@@ -79,6 +79,21 @@ export interface MockGuestData {
     createdAt: number;
     updatedAt: number;
 }
+/////
+export const guest = z.object({
+    name: z.string(),
+    type: z.enum(['adult', 'child']).optional(),
+    table: z.string().uuid().optional(), // do i really need .uuid()?
+    accompaniment: z.boolean().optional(),
+    accommodation: z.boolean().optional(),
+});
+
+export type GuestType = z.infer<typeof guest>;
+
+export const guestAccess = z.object({
+    code: z.string().length(5),
+    guests: guest.array()
+});
 
 //  ______________________________________________________________________
 
@@ -87,14 +102,14 @@ export interface DropDownContainer {
     content: string[];
 }
 
-export type ContentDropdownItem = DropDownContainer["content"]
+export type ContentDropdownItem = DropDownContainer["content"];
 
 export interface DropdownItem extends DropDownContainer {
-    id: string
+    id: string;
 }
 
 export interface AgendaData {
-    id: string, 
+    id: string,
     time: string,
     name: string,
 }

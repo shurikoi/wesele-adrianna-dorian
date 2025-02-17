@@ -1,11 +1,11 @@
-import { model, Schema } from "mongoose";
+// import { model, models, Schema } from "mongoose";
 
-const RSVP = new Schema({
-    rsvp: { type: Boolean, required: true },
-}, {
-    timestamps: true
-});
+// const RSVP = new Schema({
+//     rsvp: { type: Boolean },
+// }, {
+//     timestamps: true
+// });
 
-const RSVPModel = model('RSVP', RSVP);
+// const RSVPModel = models.RSVP || model('RSVP', RSVP);
 
-export default RSVPModel;
+// export default RSVPModel;
