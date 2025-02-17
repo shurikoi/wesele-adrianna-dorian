@@ -47,11 +47,13 @@ interface RSVP {
 }
 
 interface Accomodation {
-    id: string;
-    accomodation: boolean;
+    id?: string; // delete
+    accomodation?: boolean; // delete
+    needsAccommodation: boolean;
     accomodationResponse?: boolean;
-    createdAt: number;
-    updatedAt: number;
+    accommodationTime?: string;
+    createdAt?: number; // delete
+    updatedAt?: number; // delete
 }
 
 interface Table {
@@ -60,15 +62,21 @@ interface Table {
     capacity: number;
 }
 
-interface Guest {
+interface Accompaniment {
+    accompaniment: boolean;
+    accompanimentTime?: string;
+}
+
+export interface Guest {
     id: string;                // Unique guest ID
     name: string;              // Guest's name
     type: 'adult' | 'child';   // Type of guest (adult or child)
     table?: Table;           // Reference to the Table collection
     rsvp?: RSVP;            // Reference to the RSVP information
     accomodation: Accomodation;    // Reference to the accommodation info
-    createdAt: number;
-    updatedAt: number;
+    accompaniment?: Accompaniment;
+    createdAt: string;
+    updatedAt?: string;
 }
 
 export interface MockGuestData {
@@ -76,8 +84,8 @@ export interface MockGuestData {
     code: string;
     // type: 'pair' | 'single';
     guests: Guest[];
-    createdAt: number;
-    updatedAt: number;
+    createdAt: string;
+    updatedAt: string;
 }
 /////
 export const guest = z.object({
@@ -94,6 +102,14 @@ export const guestAccess = z.object({
     code: z.string().length(5),
     guests: guest.array()
 });
+
+export interface NewGuestObject {
+    name: string;
+    type?: 'adult' | 'child';
+    table?: string;
+    accompaniment?: { accompaniment: boolean };
+    accommodation?: { needsAccommodation: boolean }; 
+  }
 
 //  ______________________________________________________________________
 

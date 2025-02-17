@@ -1,9 +1,8 @@
-import { GuestType } from "@/lib/types";
+import { GuestType, NewGuestObject } from "@/lib/types";
 
 export const toNewGuestsObject = (guests: GuestType[]) => {
     const newGuestsObject = guests.map(({ name, type, table, accompaniment, accommodation }: GuestType) => {
-      // TODO: fix any !
-      const newGuestObject: any = {
+      const newGuestObject: NewGuestObject = {
         name
       };
       if (type) newGuestObject.type = type;
