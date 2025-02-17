@@ -4,7 +4,6 @@ const GuestAccessSchema = new Schema({
     code: { type: String, required: true, unique: true },
     guests: [{ type: Schema.Types.ObjectId, ref: 'Guest', required: true }]
 }, {
-    id: true,
     timestamps: true
 });
 

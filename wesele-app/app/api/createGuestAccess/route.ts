@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     await connection();
     const { code, guests } = guestAccess.parse(await req.json());
 
-    const newGuests = await Guest.insertMany(toNewGuestsObject(guests));
+    const newGuests = await Guest.create(toNewGuestsObject(guests));
     const newGuestAccess = await GuestAccess.insertOne({ code, guests: newGuests });
 
     return NextResponse.json({ guestAccess: newGuestAccess }, { status: 201 });
