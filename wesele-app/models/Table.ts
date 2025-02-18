@@ -6,6 +6,4 @@ const table = new Schema({
     guests: [{ type: Schema.Types.ObjectId, ref: "Guest" }]
 });
 
-const tableModel = models.Table || model('Table', table);
-
-export default tableModel;
+export default models.Table || model('Table', table);

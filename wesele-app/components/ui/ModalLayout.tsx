@@ -8,8 +8,7 @@ interface ModalLayoutProps {
 }
 
 export default function ModalLayout({ children }: ModalLayoutProps) {
-    const { isModalOpen, closeModal } = useModal();
-    if (!isModalOpen) return null;
+    const { closeModal } = useModal();
     return (
         <Portal>
             <div

@@ -18,7 +18,6 @@ export default function FormRSVP() {
         summary: <SummaryRSVP summary={summary} />
       }
 
-
     return (
         <TransitionModal stateAsKey={currentState}>
             <div className="flex box-border py-8 px-12 relative flex-col justify-center items-center gap-[1.8rem] text-black">

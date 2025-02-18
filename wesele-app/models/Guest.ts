@@ -18,19 +18,3 @@ const GuestSchema = new Schema({
 });
 
 export default models.Guest || model("Guest", GuestSchema);
-
-// import { model, models, Schema } from "mongoose";
-
-// const guest = new Schema({
-//     name: { type: String, required: true },
-//     type: { type: String, enum: ['adult', 'child'], required: true },
-//     table: { type: Schema.Types.ObjectId, ref: 'Table', default: null },
-//     rsvp: { type: Schema.Types.ObjectId, ref: 'RSVP', required: true },
-//     accommodation: { type: Schema.Types.ObjectId, ref: 'Accommodation', required: false }
-// }, {
-//     timestamps: true
-// });
-
-// const guestModel = models.Guest || model('Guest', guest);
-
-// export default guestModel;
