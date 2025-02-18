@@ -4,13 +4,14 @@ import Image from "next/image";
 import { useGuestData } from "./contexts/GuestDataProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import { latinize } from "modern-diacritics";
 import getSplitedNames from "@/utils/getSplitedNames";
+import { useModal } from "./contexts/ModalProvider";
+import GuestModal from "./GuestModal";
 
 export default function Header() {
     const { guestData } = useGuestData();
-    const [isOpened, setIsOpened] = useState(false);
+    const { openModal, isModalOpen } = useModal();
 
     const pages = ['Dojazd', 'Nocleg', 'Szczegóły', 'Stoły', 'Zdjęcia'];
 
@@ -21,12 +22,9 @@ export default function Header() {
         <header className="h-full text-white bg-transparent">
             <div className="text-[16px] flex items-center justify-between">
                 <div className="font-fellFrench italic text-3xl"><Link href={'/'}>&</Link></div>
-                <div className="flex relative cursor-pointer" onClick={() => setIsOpened(!isOpened)}>
+                <div className="flex relative cursor-pointer" onClick={() => openModal("Guest")}>
                     Cześć {getSplitedNames(guestData.guests)}
-                    <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="arrow" width={11} height={11}></Image>
-                    {/* <div className={`absolute top-0 right-0 mt-7 p-2 rounded-xl bg-[#cec4aa] ${!isOpened && 'opacity-0 none'}`}>
-                        <div className="m-1 w-[9rem] text-[#3d2f0a] rounded-xl p-3 cursor-pointer hover:bg-white/50">Wyloguj się</div>
-                    </div> */}
+                    <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="arrow" width={11} height={11}></Image>             
                 </div>
             </div>
             <div className="text-[14px] flex justify-around pt-2">
@@ -36,6 +34,7 @@ export default function Header() {
                     </Link>
                 ))}
             </div>
+            {isModalOpen === "Guest"  && <GuestModal />}
         </header>
     );
 };

@@ -22,7 +22,7 @@ export default function StartWelcomeContainer({ children, className }: { childre
                     </TitleWelcome>
                 </WelcomeContentLayout>
 
-                <ConfirmButton onClick={() => openModal()} />
+                <ConfirmButton onClick={() => openModal("FormRSVP")} />
         </div>
     );
 };

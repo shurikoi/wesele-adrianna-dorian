@@ -34,7 +34,7 @@ export default function RootLayout({
         <GuestDataProvider>
           <ModalProvider>
             <Toaster />
-            <div id="modals-root" />
+            <div id="modals-root" className="fixed z-50"/>
             {children}
           </ModalProvider>
         </GuestDataProvider>

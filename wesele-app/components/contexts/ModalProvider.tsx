@@ -3,13 +3,13 @@
 import React, { createContext, useContext, useState } from "react";
 
 type ModalContextType = {
-    isModalOpen: boolean;
-    openModal: () => void;
+    isModalOpen: string | null;
+    openModal: (content: string) => void;
     closeModal: () => void;
 };
 
 const ModalContext = createContext<ModalContextType>({
-    isModalOpen: false,
+    isModalOpen: null,
     openModal: () => {},
     closeModal: () => {},
 });
@@ -19,10 +19,13 @@ interface ModalProviderProps {
 }
 
 export default function ModalProvider({ children }: ModalProviderProps) {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<ModalContextType["isModalOpen"]>(null);
 
-    const openModal: ModalContextType["openModal"] = () => setIsModalOpen(true);
-    const closeModal: ModalContextType["closeModal"] = () => setIsModalOpen(false);
+    const openModal: ModalContextType["openModal"] = (modalName: string) => setIsModalOpen(modalName);
+    const closeModal: ModalContextType["closeModal"] = () => {
+        setIsModalOpen(null);
+        console.log(isModalOpen)
+    };
 
     return (
         <ModalContext.Provider value={{ isModalOpen, openModal, closeModal }}>

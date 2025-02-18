@@ -13,5 +13,5 @@ export default function Portal({ children }: PortalProps) {
         setMounted(true);
     }, [])
 
-    return mounted ? createPortal(children, document.body) : null;
+    return mounted ? createPortal(children, document.getElementById('modals-root')!) : null;
 };
