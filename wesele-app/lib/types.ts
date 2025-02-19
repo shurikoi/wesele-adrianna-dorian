@@ -87,7 +87,7 @@ export interface MockGuestData {
     createdAt: string;
     updatedAt: string;
 }
-/////
+///// ACTUAL TYPES related to mongodb models: /////
 export const guest = z.object({
     name: z.string(),
     type: z.enum(['adult', 'child']).optional(),
@@ -99,7 +99,7 @@ export const guest = z.object({
 export type GuestType = z.infer<typeof guest>;
 
 export const guestAccess = z.object({
-    code: z.string().length(5),
+    code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
     guests: guest.array()
 });
 
@@ -109,9 +109,22 @@ export interface NewGuestObject {
     name: string;
     type?: 'adult' | 'child';
     table?: string;
-    accompaniment?: { accompaniment: boolean };
-    accommodation?: { needsAccommodation: boolean }; 
-  }
+    accompaniment?: { accompaniment: boolean; };
+    accommodation?: { needsAccommodation: boolean; };
+    createdAt?: string;
+    updatedAt?: string;
+    __v?: number;
+    _id?: string;
+}
+
+export interface GuestAccessObject {
+    code: string;
+    guests: NewGuestObject[];
+    createdAt?: string;
+    updatedAt?: string;
+    __v?: number;
+    _id?: string;
+}
 
 //  ______________________________________________________________________
 
