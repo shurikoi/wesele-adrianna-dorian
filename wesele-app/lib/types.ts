@@ -103,6 +103,8 @@ export const guestAccess = z.object({
     guests: guest.array()
 });
 
+export const signInSchema = guestAccess.pick({ code: true });
+
 export interface NewGuestObject {
     name: string;
     type?: 'adult' | 'child';
