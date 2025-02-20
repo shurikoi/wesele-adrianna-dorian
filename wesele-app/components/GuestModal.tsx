@@ -7,11 +7,16 @@ import BackArrowIcon from "./ui/icons/BackArrowIcon";
 import Modal from "./ui/Modal";
 import { UnauthorizedGuestModal } from "./UnauthorizedGuestModal";
 import { useGuestAccess } from "./contexts/GuestAccessProvider";
+import toast from "react-hot-toast";
 
 const AuthorizedGuestModal = () => {
     const { closeModal } = useModal();
     return (
-        <RegularButton label="Wyloguj się" onClick={() => { signOut(); closeModal(); }} />
+        <RegularButton label="Wyloguj się" onClick={() => {
+            signOut({ redirect: false });
+            toast.success("Wylogowano pomyślnie");
+            closeModal();
+        }} />
     );
 };
 

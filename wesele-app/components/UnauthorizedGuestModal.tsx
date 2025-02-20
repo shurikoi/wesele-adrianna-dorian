@@ -23,6 +23,7 @@ export const UnauthorizedGuestModal = () => {
             toast.error("Nieprawidłowy kod dostępu");
             return;
         }
+        toast.success("Zalogowano pomyślnie");
         closeModal();
     };
     return (

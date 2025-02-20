@@ -12,7 +12,7 @@ export default function Home() {
     const { guestAccess } = useGuestAccess();
     return (
         <>
-            <StartWelcomeContainer className="mb-8 italic">
+            <StartWelcomeContainer className="mb-8 italic md:text-center">
                 Adrianna & Dorian
             </StartWelcomeContainer>
             <InvitationInfo />
