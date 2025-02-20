@@ -7,11 +7,11 @@ import { latinize } from "modern-diacritics";
 import getSplitedNames from "@/utils/getSplitedNames";
 import { useModal } from "./contexts/ModalProvider";
 import GuestModal from "./GuestModal";
-import { useSession } from "next-auth/react";
+import { useGuestAccess } from "./contexts/GuestAccessProvider";
 
 export default function Header() {
     const { openModal, isModalOpen } = useModal();
-    const { data: session } = useSession();
+    const { guestAccess } = useGuestAccess();
 
     const pages = ['Dojazd', 'Nocleg', 'Szczegóły', 'Stoły', 'Zdjęcia'];
 
@@ -23,7 +23,7 @@ export default function Header() {
             <div className="text-[16px] flex items-center justify-between">
                 <div className="font-fellFrench italic text-3xl"><Link href={'/'}>&</Link></div>
                 <div className="flex relative cursor-pointer" onClick={() => openModal("Guest")}>
-                    {session?.user ? `Cześć ${getSplitedNames(session.user.guests)}!` : 'Zaloguj się'}
+                    {guestAccess ? `Cześć ${getSplitedNames(guestAccess?.guests)}!` : 'Zaloguj się'}
                     <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="arrow" width={11} height={11}></Image>             
                 </div>
             </div>

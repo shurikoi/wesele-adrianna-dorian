@@ -4,7 +4,7 @@ import "./globals.css";
 import { fellFrench, sfPro } from "@/components/fonts";
 import ModalProvider from "@/components/contexts/ModalProvider";
 import { Toaster } from "react-hot-toast";
-import GuestDataProvider from "@/components/contexts/GuestDataProvider";
+import GuestAccessProvider from "@/components/contexts/GuestAccessProvider";
 import AuthProvider from "@/components/contexts/AuthProvider";
 
 const geistSans = Geist({
@@ -33,13 +33,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${fellFrench.variable} ${sfPro.variable} bg-backgroundPeach text-white antialiased`}
       >
         <AuthProvider>
-          <GuestDataProvider>
+          <GuestAccessProvider>
             <ModalProvider>
               <Toaster />
               <div id="modals-root" className="fixed z-50" />
               {children}
             </ModalProvider>
-          </GuestDataProvider>
+          </GuestAccessProvider>
         </AuthProvider>
       </body>
     </html>

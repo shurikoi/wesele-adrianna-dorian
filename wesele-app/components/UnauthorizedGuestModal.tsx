@@ -7,11 +7,13 @@ import ModalInput from "./ui/ModalInput";
 import RegularButton from "./ui/buttons/RegularButton";
 import { signInSchema } from "@/lib/types";
 import toast from "react-hot-toast";
+import { useModal } from "./contexts/ModalProvider";
 
 export const UnauthorizedGuestModal = () => {
+    const { closeModal } = useModal();
     const [code, setCode] = useState("");
     const handleSignInForm = async () => {
-        const codeParsed = signInSchema.safeParse({ code })
+        const codeParsed = signInSchema.safeParse({ code });
         if (!codeParsed.success) {
             toast.error(codeParsed.error.errors[0].message);
             return;
@@ -21,7 +23,7 @@ export const UnauthorizedGuestModal = () => {
             toast.error("Nieprawidłowy kod dostępu");
             return;
         }
-        console.log(response);
+        closeModal();
     };
     return (
         <div className="flex flex-col gap-5 w-full items-center">
@@ -30,7 +32,7 @@ export const UnauthorizedGuestModal = () => {
                 <div className="font-sfPro italic text-center">Zeskanuj kod QR, lub wpisz kod z zaproszenia!</div>
             </div>
             <ModalInput placeholder="Enter code" value={code} setValue={setCode} handleSubmit={handleSignInForm} />
-            <RegularButton label="Sign in" onClick={handleSignInForm} />
+            <RegularButton label="Zaloguj się" onClick={handleSignInForm} />
         </div>
     );
 };

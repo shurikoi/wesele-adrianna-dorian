@@ -1,28 +1,29 @@
 'use client';
 
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { useModal } from "./contexts/ModalProvider";
 import RegularButton from "./ui/buttons/RegularButton";
 import BackArrowIcon from "./ui/icons/BackArrowIcon";
 import Modal from "./ui/Modal";
 import { UnauthorizedGuestModal } from "./UnauthorizedGuestModal";
+import { useGuestAccess } from "./contexts/GuestAccessProvider";
 
 const AuthorizedGuestModal = () => {
+    const { closeModal } = useModal();
     return (
-        <RegularButton label="Sign out" onClick={() => signOut()} />
+        <RegularButton label="Wyloguj się" onClick={() => { signOut(); closeModal(); }} />
     );
 };
 
 export default function GuestModal() {
-    const { data: session } = useSession();
+    const { guestAccess } = useGuestAccess();
     const { closeModal } = useModal();
-    console.log(session)
     return (
         <Modal>
             <div className="flex box-border py-8 px-12 relative flex-col justify-center items-center gap-[1.8rem] text-black">
                 <BackArrowIcon onClick={() => closeModal()} />
                 <div className="font-fellFrench italic text-2xl">A & D</div>
-                {session?.user ? <AuthorizedGuestModal /> : <UnauthorizedGuestModal />}
+                {guestAccess ? <AuthorizedGuestModal /> : <UnauthorizedGuestModal />}
             </div>
         </Modal>
     );
