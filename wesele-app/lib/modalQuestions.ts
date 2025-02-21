@@ -10,7 +10,7 @@ interface modalQuestions {
 export const modalQuestions: modalQuestions[] = [
     {
         id: uuidv4(),
-        question: 'Czy będzie Pan z Towarzyszem?',
+        question: 'Czy będziesz z osobą towarzyszącą?',
         buttons: [{
             title: 'Tak',
             id: 'accept',

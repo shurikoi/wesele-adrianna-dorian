@@ -94,6 +94,7 @@ export const guest = z.object({
     table: z.string().uuid().optional(), // do i really need .uuid()?
     accompaniment: z.boolean().optional(),
     accommodation: z.boolean().optional(),
+    _id: z.string().optional(),
 });
 
 export type GuestType = z.infer<typeof guest>;
