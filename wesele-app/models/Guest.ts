@@ -6,12 +6,12 @@ const GuestSchema = new Schema({
   table: { type: Schema.Types.ObjectId, ref: "Table", default: null },
   accompaniment: {
     accompaniment: { type: Boolean, default: false },
-    accompanimentTime: { type: Date, default: null }
+    // accompanimentTime: { type: Date, default: null }
   },
   accommodation: {
     needsAccommodation: { type: Boolean, default: false },
     accommodationResponse: { type: Boolean, default: null },
-    accommodationTime: { type: Date, default: null }
+    // accommodationTime: { type: Date, default: null }
   }
 }, {
   timestamps: true

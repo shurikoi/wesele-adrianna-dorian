@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import "@/models/Guest";
 import { z } from "zod";
 
+// TODO: make it union, _id not id 
 const getGuestAccess = z.object({ id: z.string().optional(), code: z.string().optional() });
 
 export async function POST(req: NextRequest) {

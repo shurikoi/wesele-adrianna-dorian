@@ -106,17 +106,35 @@ export const guestAccess = z.object({
 
 export const signInSchema = guestAccess.pick({ code: true });
 
-export interface NewGuestObject {
-    name: string;
-    type?: 'adult' | 'child';
-    table?: string;
-    accompaniment?: { accompaniment: boolean; };
-    accommodation?: { needsAccommodation: boolean; };
-    createdAt?: string;
-    updatedAt?: string;
-    __v?: number;
-    _id?: string;
-}
+export const NewGuestObjectSchema = z.object({
+    _id: z.string().optional(),
+    name: z.string(),
+    type: z.enum(['adult', 'child']).optional(),
+    table: z.string().optional(),
+    accompaniment: z.object({
+        accompaniment: z.boolean(),
+    }).optional(),
+    accommodation: z.object({
+        needsAccommodation: z.boolean(),
+    }).optional(),
+    createdAt: z.string().optional(),
+    updatedAt: z.string().optional(),
+    __v: z.number().optional(),
+});
+
+export type NewGuestObject = z.infer<typeof NewGuestObjectSchema>;
+
+// export interface NewGuestObject {
+//     _id?: string;
+//     name: string;
+//     type?: 'adult' | 'child';
+//     table?: string;
+//     accompaniment?: { accompaniment: boolean; };
+//     accommodation?: { needsAccommodation: boolean; };
+//     createdAt?: string;
+//     updatedAt?: string;
+//     __v?: number;
+// }
 
 export interface GuestAccessObject {
     code: string;
