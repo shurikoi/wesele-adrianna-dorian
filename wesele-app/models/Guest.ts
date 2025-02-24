@@ -5,12 +5,12 @@ const GuestSchema = new Schema({
   type: { type: String, enum: ["adult", "child"], default: 'adult', required: true },
   table: { type: Schema.Types.ObjectId, ref: "Table", default: null },
   accompaniment: {
-    accompaniment: { type: Boolean, default: false },
+    accompaniment: { type: Boolean },
     // accompanimentTime: { type: Date, default: null }
   },
   accommodation: {
-    needsAccommodation: { type: Boolean, default: false },
-    accommodationResponse: { type: Boolean, default: null },
+    needsAccommodation: { type: Boolean},
+    accommodationResponse: { type: Boolean },
     // accommodationTime: { type: Date, default: null }
   }
 }, {

@@ -18,7 +18,7 @@ export const UnauthorizedGuestModal = () => {
             toast.error(codeParsed.error.errors[0].message);
             return;
         };
-        const response = await handleSignIn({ code: codeParsed.data.code });
+        const response = await handleSignIn({ code: codeParsed.data.code.toLowerCase() });
         if (response?.error) {
             toast.error("Nieprawidłowy kod dostępu");
             return;
