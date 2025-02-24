@@ -8,14 +8,14 @@ import { StatesRSVP, UserChoices } from "@/lib/types";
 import ModalQuestions from "./ModalQuestions";
 import SummaryRSVP from "./SummaryRSVP";
 
-export default function FormRSVP({ isAnsweredRSVP }: { isAnsweredRSVP: boolean; }) {
+export default function FormRSVP({ isAnsweredRSVP, setIsAnsweredRSVP }: { isAnsweredRSVP: boolean; setIsAnsweredRSVP: React.Dispatch<React.SetStateAction<boolean>> }) {
     
     const { closeModal } = useModal();
     const [summary, setSummary] = useState<UserChoices>([]);
     const [currentState, setCurrentState] = useState<StatesRSVP>(isAnsweredRSVP ? 'summary' : 'questions');
 
     const states = {
-        questions: <ModalQuestions setCurrentState={setCurrentState} setSummary={setSummary} summary={summary} />,
+        questions: <ModalQuestions setCurrentState={setCurrentState} setSummary={setSummary} summary={summary} setIsAnsweredRSVP={setIsAnsweredRSVP} />,
         summary: <SummaryRSVP summary={summary}/>
       }
 

@@ -8,10 +8,11 @@ import { useGuestAccess } from "./contexts/GuestAccessProvider";
 interface ModalQuestionProps {
     setCurrentState: React.Dispatch<React.SetStateAction<StatesRSVP>>,
     setSummary: React.Dispatch<React.SetStateAction<UserChoices>>,
+    setIsAnsweredRSVP: React.Dispatch<React.SetStateAction<boolean>>
     summary: UserChoices;
 }
 
-export default function ModalQuestions({ setCurrentState, setSummary, summary }: ModalQuestionProps) {
+export default function ModalQuestions({ setCurrentState, setSummary, summary, setIsAnsweredRSVP }: ModalQuestionProps) {
     const { guestAccess } = useGuestAccess();
     const handleSubmit = () => {
         if (!summary || summary.length !== modalQuestions.length) {
@@ -19,6 +20,7 @@ export default function ModalQuestions({ setCurrentState, setSummary, summary }:
             return;
         };
         setCurrentState('summary');
+        setIsAnsweredRSVP(true);
         summary.map(async (question) => {
             const foundQuestion: ModalQuestionType | undefined = modalQuestions.find((q) => q.id === question.id);
             if (!foundQuestion) {
