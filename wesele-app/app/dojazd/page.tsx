@@ -22,8 +22,8 @@ export default function Dojazd() {
                     </TitleWelcome>
                     <Paragraph>Bazylika archikatedralna <br />św. Stanisława Kostki</Paragraph>
                     <Paragraph>ulica Piotrkowska 265</Paragraph>
-                    <Paragraph>Łódź</Paragraph>
-                    <NavigateButton href="https://g.co/kgs/SrXN96K" />
+                    <Paragraph>90-457 Łódź</Paragraph>
+                    <NavigateButton href="https://maps.app.goo.gl/X29qvtr9RXNjyddcA" />
                 </LeftContainer>
                 <RightContainer>
                     <RightArrow />

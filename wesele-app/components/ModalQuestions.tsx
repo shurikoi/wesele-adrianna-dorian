@@ -11,6 +11,7 @@ interface ModalQuestionProps {
 
 export default function ModalQuestions({ setCurrentState, setSummary, summary }: ModalQuestionProps) {
     const handleSubmit = () => {
+        // console.log(summary);
         setCurrentState('summary');
     };
     return (

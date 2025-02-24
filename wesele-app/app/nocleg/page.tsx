@@ -9,7 +9,7 @@ import WelcomeContainer from "@/components/WelcomeContainer";
 
 export default function Nocleg() {
     const { guestAccess } = useGuestAccess();
-    const accommodation = guestAccess?.guests[0].accommodation;
+    const accommodation = guestAccess?.guests[0].accommodation?.needsAccommodation;
     return (
         <>
             <WelcomeContainer imageOptionSrc="2">
