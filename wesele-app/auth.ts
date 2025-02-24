@@ -1,9 +1,10 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { signInSchema } from "./lib/types";
+import { GuestAccessObject, signInSchema } from "./lib/types";
 import GuestAccess from "./models/GuestAccess";
 import connection from "./lib/connection";
 import "@/models/Guest";
+import { AdapterUser } from "next-auth/adapters";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
@@ -29,7 +30,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     callbacks: {
         async jwt({ token, user }) {
             await connection();
-            const guestAccess = await GuestAccess.findOne({ code: user?.code || token?.user?.code }).populate('guests');
+            const guestAccess = await GuestAccess.findOne({ code: user?.code || (token?.user as GuestAccessObject).code }).populate('guests');
             if (guestAccess) {
                 token.user = guestAccess;
             }
@@ -37,7 +38,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         },
         async session({ session, token }) {
             if (token?.user) {
-                session.user = token.user;
+                session.user = token.user as AdapterUser & GuestAccessObject;
             }
             return session;
         }

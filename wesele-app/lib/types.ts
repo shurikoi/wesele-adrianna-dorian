@@ -36,57 +36,6 @@ export type WelcomeImageOption = z.infer<typeof welcomeImagesSchema>;
 
 export type StatesRSVP = 'questions' | 'summary';
 
-// _______________________________________________________ IN PROGRESS _______________________________________________________
-
-interface RSVP {
-    id: string;
-    rsvp: boolean;
-    rsvpTime?: string;
-    createdAt: number;
-    updatedAt: number;
-}
-
-interface Accomodation {
-    id?: string; // delete
-    accomodation?: boolean; // delete
-    needsAccommodation: boolean;
-    accomodationResponse?: boolean;
-    accommodationTime?: string;
-    createdAt?: number; // delete
-    updatedAt?: number; // delete
-}
-
-interface Table {
-    id: string;
-    number: number;
-    capacity: number;
-}
-
-interface Accompaniment {
-    accompaniment: boolean;
-    accompanimentTime?: string;
-}
-
-export interface Guest {
-    id: string;                // Unique guest ID
-    name: string;              // Guest's name
-    type: 'adult' | 'child';   // Type of guest (adult or child)
-    table?: Table;           // Reference to the Table collection
-    rsvp?: RSVP;            // Reference to the RSVP information
-    accomodation: Accomodation;    // Reference to the accommodation info
-    accompaniment?: Accompaniment;
-    createdAt: string;
-    updatedAt?: string;
-}
-
-export interface MockGuestData {
-    id: string;
-    code: string;
-    // type: 'pair' | 'single';
-    guests: Guest[];
-    createdAt: string;
-    updatedAt: string;
-}
 ///// ACTUAL TYPES related to mongodb models: /////
 export const guest = z.object({
     name: z.string(),
@@ -123,18 +72,6 @@ export const NewGuestObjectSchema = z.object({
 });
 
 export type NewGuestObject = z.infer<typeof NewGuestObjectSchema>;
-
-// export interface NewGuestObject {
-//     _id?: string;
-//     name: string;
-//     type?: 'adult' | 'child';
-//     table?: string;
-//     accompaniment?: { accompaniment: boolean; };
-//     accommodation?: { needsAccommodation: boolean; };
-//     createdAt?: string;
-//     updatedAt?: string;
-//     __v?: number;
-// }
 
 export interface GuestAccessObject {
     code: string;
