@@ -21,7 +21,7 @@ export default function FormRSVP({ isAnsweredRSVP }: { isAnsweredRSVP: boolean; 
 
     return (
         <TransitionModal stateAsKey={currentState}>
-            <div className="flex box-border py-8 px-12 relative flex-col justify-center items-center gap-[1.8rem] text-black">
+            <div className="flex box-border py-8 px-12 relative flex-col justify-center items-center gap-[1.8rem] text-black h-[10hv] overflow-auto">
                 <BackArrowIcon onClick={() => closeModal()} />
                 <div className="font-fellFrench italic text-2xl">A & D</div>
                 {states[currentState]}
