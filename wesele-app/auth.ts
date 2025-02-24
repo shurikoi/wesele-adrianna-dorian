@@ -2,7 +2,6 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { signInSchema } from "./lib/types";
 import GuestAccess from "./models/GuestAccess";
-import { ZodError } from "zod";
 import connection from "./lib/connection";
 import "@/models/Guest";
 
@@ -29,8 +28,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     ],
     callbacks: {
         async jwt({ token, user }) {
-            if (user) {
-                token.user = user;
+            await connection();
+            const guestAccess = await GuestAccess.findOne({ code: user?.code || token?.user?.code }).populate('guests');
+            if (guestAccess) {
+                token.user = guestAccess;
             }
             return token;
         },
