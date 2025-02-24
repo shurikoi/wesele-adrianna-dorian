@@ -20,7 +20,7 @@ export default function Dojazd() {
                     <TitleWelcome>
                         Ślub
                     </TitleWelcome>
-                    <Paragraph>Bazylika archikatedralna <br />św. Stanisława Kostki</Paragraph>
+                    <Paragraph>Katedra Łódzka</Paragraph>
                     <Paragraph>ulica Piotrkowska 265</Paragraph>
                     <Paragraph>90-457 Łódź</Paragraph>
                     <NavigateButton href="https://maps.app.goo.gl/X29qvtr9RXNjyddcA" />

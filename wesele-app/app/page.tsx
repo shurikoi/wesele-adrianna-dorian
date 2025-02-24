@@ -10,7 +10,7 @@ import StartWelcomeContainer from '@/components/StartWelcomeContainer';
 export default function Home() {
     const { isModalOpen } = useModal();
     const { guestAccess } = useGuestAccess();
-    const isAnsweredRSVP = guestAccess ? 'accompaniment' in guestAccess?.guests[0] : false;
+    
     return (
         <>
             <StartWelcomeContainer className="mb-8 italic md:text-center">
