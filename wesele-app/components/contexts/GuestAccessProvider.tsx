@@ -3,6 +3,7 @@
 import { GuestAccessObject } from "@/lib/types";
 import { useSession } from "next-auth/react";
 import React, { createContext, useContext } from "react";
+import Loader from "../ui/Loader";
 
 type GuestContextType = {
     guestAccess: GuestAccessObject | null;
@@ -18,7 +19,7 @@ interface ModalProviderProps {
 
 export default function GuestAccessProvider({ children }: ModalProviderProps) {
     const { data: session, status } = useSession();
-    if (status === "loading") return null; // TODO: Add loading spinner
+    if (status === "loading") return <Loader />;
     const guestAccess = session?.user || null;
     return (
         <GuestAccessContext.Provider value={{ guestAccess }}>
