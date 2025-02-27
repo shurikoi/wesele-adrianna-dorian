@@ -4,6 +4,7 @@ import { StatesRSVP, UserChoices } from "@/lib/types";
 import Callout from "./ui/Callout";
 import toast from "react-hot-toast";
 import { useGuestAccess } from "./contexts/GuestAccessProvider";
+import ContactInfo from "./ui/ContactInfo";
 
 interface ModalQuestionProps {
     setCurrentState: React.Dispatch<React.SetStateAction<StatesRSVP>>,
@@ -38,7 +39,9 @@ export default function ModalQuestions({ setCurrentState, setSummary, summary, s
     };
     return (
         <>
-            <Callout />
+            <Callout>
+                <ContactInfo />
+            </Callout>
             {modalQuestions.map((question) => <ModalQuestion key={question.id} id={question.id} question={question.question} buttons={question.buttons} setUserChoices={setSummary} userChoices={summary} />)}
             <button onClick={handleSubmit} className="font-sfPro font-bold text-gray-600 border-b-[2.8px] border-blue-500 hover:border-blue-400 transition duration-300">Potwierdź wybór</button>
         </>

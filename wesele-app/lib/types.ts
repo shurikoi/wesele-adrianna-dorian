@@ -43,6 +43,7 @@ export const guest = z.object({
     table: z.string().uuid().optional(), // do i really need .uuid()?
     accompaniment: z.boolean().optional(),
     accommodation: z.boolean().optional(),
+    accommodationResponse: z.boolean().optional(),
     _id: z.string().optional(),
 });
 
@@ -64,7 +65,8 @@ export const NewGuestObjectSchema = z.object({
         accompaniment: z.boolean(),
     }).optional(),
     accommodation: z.object({
-        needsAccommodation: z.boolean(),
+        needsAccommodation: z.boolean().optional(),
+        accommodationResponse: z.boolean().optional(),
     }).optional(),
     createdAt: z.string().optional(),
     updatedAt: z.string().optional(),

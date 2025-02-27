@@ -1,13 +1,20 @@
 import Image from "next/image";
 
-export default function Callout() {
+interface CalloutProps {
+    style?: 'white' | 'antiquewhite'
+    className?: React.ComponentProps<'div'>['className']
+    children?: React.ReactNode
+}
+
+export default function Callout({ style, className, children }: CalloutProps) {
+    const styles = {
+        white: 'bg-[#f1f9ff] border-gray-300',
+        antiquewhite: 'bg-[#FAEBD7] border-[#83624d]',
+    }
     return (
-        <div className="rounded-md bg-[#f1f9ff] border border-gray-300 w-full p-5 flex gap-4 flex-col items-center">
+        <div className={`${className} ${styles[style || 'white']} rounded-md border w-full p-5 flex gap-4 flex-col items-center text-black`}>
             <Image src="/emoji/lion.png" alt="lion" width={25} height={25} className="h-[25px] w-[25px]" />
-            <div className="font-sfPro font-[17px] flex flex-col gap-3">
-                <div>Uprzejmie prosimy o potwierdzenie obecności telefonicznie:</div>
-                <div>Adrianna 790 776 626 <br /> Dorian 578 223 999</div>
-            </div>
+            {children}
         </div>
     )
 };

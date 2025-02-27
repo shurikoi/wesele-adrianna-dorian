@@ -3,6 +3,7 @@ import { UserChoices } from "@/lib/types";
 import Paragraph from "./ui/Paragraph";
 import Callout from "./ui/Callout";
 import { useGuestAccess } from "./contexts/GuestAccessProvider";
+import ContactInfo from "./ui/ContactInfo";
 
 export default function SummaryRSVP({ summary }: { summary: UserChoices; }) {
     const { guestAccess } = useGuestAccess();
@@ -11,7 +12,9 @@ export default function SummaryRSVP({ summary }: { summary: UserChoices; }) {
     const isSummaryTrue = summary ? summary[0]?.answer === 'yes' : false;
     return (
         <>
-            <Callout />
+            <Callout>
+                <ContactInfo />
+            </Callout>
             <Paragraph className="italic text-center">POTWIERDZENIE WYBORU</Paragraph>
             {/* {summary?.map((question) => ( */}
             <div className="flex flex-col gap-2 text-center">
