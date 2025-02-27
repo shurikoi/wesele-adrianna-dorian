@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adrianna & Dorian",
-  description: "Wesele Adriany i Doriana",
+  title: "Adriana & Dorian",
+  description: "Strona weselna Ady i Doriana",
 };
 
 export default function RootLayout({
