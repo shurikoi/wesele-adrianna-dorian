@@ -9,7 +9,7 @@ import ContactInfo from "./ui/ContactInfo";
 interface ModalQuestionProps {
     setCurrentState: React.Dispatch<React.SetStateAction<StatesRSVP>>,
     setSummary: React.Dispatch<React.SetStateAction<UserChoices>>,
-    setIsAnsweredRSVP: React.Dispatch<React.SetStateAction<boolean>>
+    setIsAnsweredRSVP: React.Dispatch<React.SetStateAction<boolean>>;
     summary: UserChoices;
 }
 
@@ -42,8 +42,12 @@ export default function ModalQuestions({ setCurrentState, setSummary, summary, s
             <Callout>
                 <ContactInfo />
             </Callout>
-            {modalQuestions.map((question) => <ModalQuestion key={question.id} id={question.id} question={question.question} buttons={question.buttons} setUserChoices={setSummary} userChoices={summary} />)}
-            <button onClick={handleSubmit} className="font-sfPro font-bold text-gray-600 border-b-[2.8px] border-blue-500 hover:border-blue-400 transition duration-300">Potwierdź wybór</button>
+            {guestAccess?.type === 'single' && (
+                <>
+                    {modalQuestions.map((question) => <ModalQuestion key={question.id} id={question.id} question={question.question} buttons={question.buttons} setUserChoices={setSummary} userChoices={summary} />)}
+                    <button onClick={handleSubmit} className="font-sfPro font-bold text-gray-600 border-b-[2.8px] border-blue-500 hover:border-blue-400 transition duration-300">Potwierdź wybór</button>
+                </>
+            )}
         </>
     );
 };

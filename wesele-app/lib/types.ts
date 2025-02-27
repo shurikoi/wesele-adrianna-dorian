@@ -51,7 +51,8 @@ export type GuestType = z.infer<typeof guest>;
 
 export const guestAccess = z.object({
     code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
-    guests: guest.array()
+    guests: guest.array(),
+    type: z.enum(['pair', 'single']),
 });
 
 export const signInSchema = guestAccess.pick({ code: true });
@@ -75,14 +76,25 @@ export const NewGuestObjectSchema = z.object({
 
 export type NewGuestObject = z.infer<typeof NewGuestObjectSchema>;
 
-export interface GuestAccessObject {
-    code: string;
-    guests: NewGuestObject[];
-    createdAt?: string;
-    updatedAt?: string;
-    __v?: number;
-    _id?: string;
-}
+export const GuestAccessSchema = z.object({
+    code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
+    guests: NewGuestObjectSchema.array(),
+    type: z.enum(['pair', 'single']),
+    _id: z.string().optional(),
+    createdAt: z.string().optional(),
+    updatedAt: z.string().optional(),
+    __v: z.number().optional(),
+});
+// export interface GuestAccessObject {
+//     code: string;
+//     guests: NewGuestObject[];
+//     createdAt?: string;
+//     updatedAt?: string;
+//     __v?: number;
+//     _id?: string;
+// }
+
+export type GuestAccessObject = z.infer<typeof GuestAccessSchema>;
 
 //  ______________________________________________________________________
 

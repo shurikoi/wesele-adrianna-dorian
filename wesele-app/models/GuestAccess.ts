@@ -2,6 +2,7 @@ import { model, models, Schema } from "mongoose";
 
 const GuestAccessSchema = new Schema({
     code: { type: String, required: true, unique: true },
+    type: { type: String, enum: ["pair", "single"], required: true },
     guests: [{ type: Schema.Types.ObjectId, ref: 'Guest', required: true }]
 }, {
     timestamps: true

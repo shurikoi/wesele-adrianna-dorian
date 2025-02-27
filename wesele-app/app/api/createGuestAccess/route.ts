@@ -8,10 +8,10 @@ import { toNewGuestsObject } from "@/utils/toNewGuestsObject";
 export async function POST(req: NextRequest) {
   try {
     await connection();
-    const { code, guests } = guestAccess.parse(await req.json());
+    const { code, type, guests } = guestAccess.parse(await req.json());
 
     const newGuests = await Guest.create(toNewGuestsObject(guests));
-    const newGuestAccess = await GuestAccess.insertOne({ code, guests: newGuests });
+    const newGuestAccess = await GuestAccess.insertOne({ code, type, guests: newGuests });
 
     return NextResponse.json({ guestAccess: newGuestAccess }, { status: 201 });
   } catch (error) {

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useGuestAccess } from "./contexts/GuestAccessProvider";
 import NavigateButton from "./ui/buttons/NavigateButton";
 import Callout from "./ui/Callout";
@@ -10,7 +11,6 @@ export default function AccomodationContent() {
     const [isAccommodationResponse, setAccommodationResponse] = useState(guestAccess?.guests[0]?.accommodation?.accommodationResponse);
 
     const handleSubmitAccommodation = async () => {
-        console.log('Potwierdzono nocleg');
         await fetch('/api/updateGuest', {
             method: 'POST',
             body: JSON.stringify({
@@ -20,11 +20,12 @@ export default function AccomodationContent() {
             })
         });
         setAccommodationResponse(true);
+        toast.success('Nocleg został potwierdzony');
     };
     return (
         <>
             <Callout style="antiquewhite" className="mb-7 border-2">
-                <div className="font-sfPro font-[17px] flex flex-col gap-3 items-center">
+                <div className="font-sfPro font-[17px] flex flex-col gap-3 items-center transition-all duration-300">
                     {isAccommodationResponse ? (
                         <div>Twój nocleg został potwierdzony</div>
                     ) : (
