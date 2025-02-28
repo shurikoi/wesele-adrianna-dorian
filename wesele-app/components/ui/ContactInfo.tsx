@@ -6,3 +6,6 @@ export default function ContactInfo() {
         </div>
     );
 };
+
+
+export const contactInfo = () => '\nAdrianna 790 776 626 \nDorian 578 223 999'

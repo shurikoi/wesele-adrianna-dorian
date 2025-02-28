@@ -29,7 +29,10 @@ export default function GuestAccessProvider({ children }: ModalProviderProps) {
 };
 
 export function useGuestAccess() {
-    const guestAccess = useContext(GuestAccessContext);
+    const { guestAccess } = useContext(GuestAccessContext);
+    const isAccommodationResponsed = guestAccess?.guests[0]?.accommodation?.accommodationResponse || false;
+    // const isAccommodationUnanswered = 
+    // const accommodation 
 
-    return guestAccess;
+    return { guestAccess, isAccommodationResponsed };
 }

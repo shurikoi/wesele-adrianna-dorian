@@ -1,3 +1,4 @@
+import { contactInfo } from "@/components/ui/ContactInfo";
 import { DropdownItem } from "./types";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -20,6 +21,6 @@ export const FAQData: DropdownItem[] = [
     {
         id: uuidv4(),
         title: "Nadal mam pytania. Jak najlepiej się z Wami skontaktować?",
-        content: ["Najlepiej skontaktować się z nami pod numerami telefonu:<br/>"]
+        content: [`Najlepiej skontaktować się z nami pod numerami telefonu: ${contactInfo()}`]
     }
 ];
