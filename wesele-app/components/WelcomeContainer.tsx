@@ -7,7 +7,7 @@ export default function WelcomeContainer({ children, imageOptionSrc }: { childre
     return (
         <div className="h-[80vh] w-full relative bg-backgroundPeach">
             <div className="h-full w-full absolute flex items-center justify-center">
-                <Image src={imageSrc} alt="hi" width={200} height={200} />
+                <Image src={imageSrc} alt="hi" width={200} height={200} priority={true} />
             </div>
             <WelcomeContentLayout>
                 {children}

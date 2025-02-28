@@ -19,7 +19,7 @@ export default function Header({ className }: { className?: React.ComponentProps
     const currentPage = pathname.split('/')[1];
 
     return (
-        <header className={`${className} h-full text-white bg-transparent`}>
+        <header className={`${className} h-auto text-white bg-transparent`}>
             <div className="text-[16px] flex items-center justify-between">
                 <div className="font-fellFrench italic text-3xl"><Link href={'/'}>&</Link></div>
                 <div className="flex relative cursor-pointer" onClick={() => openModal("Guest")}>
