@@ -8,15 +8,14 @@ import TitleWelcomeLayout from "@/components/ui/TitleWelcomeLayout";
 import WelcomeContainer from "@/components/WelcomeContainer";
 
 export default function Nocleg() {
-    const { guestAccess } = useGuestAccess();
-    const accommodation = guestAccess?.guests[0].accommodation?.needsAccommodation;
+    const { isAccommodationNeeded } = useGuestAccess();
     return (
         <>
             <WelcomeContainer imageOptionSrc="2">
                 <TitleWelcomeLayout title="Nocleg" description="sprawdź gdzie śpisz" />
             </WelcomeContainer>
             <PageContainer>
-                {accommodation ? <AccomodationContent /> : <LackAccomodation />}
+                {isAccommodationNeeded ? <AccomodationContent /> : <LackAccomodation />}
             </PageContainer>
         </>
     );

@@ -30,9 +30,8 @@ export default function GuestAccessProvider({ children }: ModalProviderProps) {
 
 export function useGuestAccess() {
     const { guestAccess } = useContext(GuestAccessContext);
-    const isAccommodationResponsed = guestAccess?.guests[0]?.accommodation?.accommodationResponse || false;
-    // const isAccommodationUnanswered = 
-    // const accommodation 
+    const isAccommodationResponsed = guestAccess?.accommodation?.accommodationResponse || false;
+    const isAccommodationNeeded = guestAccess?.accommodation?.needsAccommodation || false;
 
-    return { guestAccess, isAccommodationResponsed };
+    return { guestAccess, isAccommodationResponsed, isAccommodationNeeded };
 }

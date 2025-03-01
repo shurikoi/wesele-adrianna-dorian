@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 
 export default function Page({ params }: { params: Promise<{ code: string; }>; }) {
     const { code } = use(params);
-    console.log(code);
 
     const handleRoute = async () => {
         const response = await handleSignIn({ code });

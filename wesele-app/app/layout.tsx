@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import GuestAccessProvider from "@/components/contexts/GuestAccessProvider";
 import AuthProvider from "@/components/contexts/AuthProvider";
 import Header from "@/components/Header";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
               <div className="relative">
                 <Header className="p-8 absolute top-0 left-0 z-40 w-full" />
                 {children}
+                <Analytics />
               </div>
             </ModalProvider>
           </GuestAccessProvider>

@@ -11,10 +11,10 @@ export default function AccomodationContent() {
     const [isAccommodationResponse, setAccommodationResponse] = useState(isAccommodationResponsed);
 
     const handleSubmitAccommodation = async () => {
-        await fetch('/api/updateGuest', {
+        await fetch('/api/updateGuestAccess', {
             method: 'POST',
             body: JSON.stringify({
-                '_id': guestAccess?.guests[0]._id,
+                '_id': guestAccess?._id,
                 'accommodation': true,
                 'accommodationResponse': true
             })
