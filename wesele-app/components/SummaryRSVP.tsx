@@ -6,8 +6,7 @@ import { useGuestAccess } from "./contexts/GuestAccessProvider";
 import ContactInfo from "./ui/ContactInfo";
 
 export default function SummaryRSVP({ summary }: { summary: UserChoices; }) {
-    const { guestAccess } = useGuestAccess();
-    const isAccompaniment = guestAccess?.guests[0].accompaniment?.accompaniment;
+    const { isAccompaniment } = useGuestAccess();
     const titleAccompaniment = 'Czy będziesz z osobą towarzyszącą?';
     const isSummaryTrue = summary ? summary[0]?.answer === 'yes' : false;
     return (
