@@ -7,7 +7,7 @@ import TitleWelcome from "./ui/TitleWelcome";
 import { useState } from "react";
 
 export default function AccomodationContent() {
-    const { guestAccess, isAccommodationResponsed } = useGuestAccess();
+    const { guestAccess, isAccommodationResponsed, isMultipleGuests } = useGuestAccess();
     const [isAccommodationResponse, setAccommodationResponse] = useState(isAccommodationResponsed);
 
     const handleSubmitAccommodation = async () => {
@@ -29,7 +29,7 @@ export default function AccomodationContent() {
                 <>
                     <Callout style="antiquewhite" className="mb-7 border-2">
                         <div className="font-sfPro font-bold">Twój nocleg został potwierdzony!</div>
-                        <div className="font-sfPro font-[17px] mt-[-3px]">Zapraszamy na pyszne śniadanie!</div>
+                        <div className="font-sfPro font-[17px] mt-[-3px]">Jak już {isMultipleGuests ? 'wstaniecie' : 'wstaniesz'} zapraszamy {isMultipleGuests ? 'Was' : 'Cię'} na pyszne śniadanie!</div>
                     </Callout>
                     <TitleWelcome>Czuj się jak u siebie</TitleWelcome>
                     <Paragraph>Diamentowy pałac</Paragraph>
@@ -40,7 +40,7 @@ export default function AccomodationContent() {
             ) : (
                 <Callout style="antiquewhite" className="mb-7 border-2">
                     <div className="font-sfPro font-bold">Uprzejmie prosimy o potwierdzenie noclegu</div>
-                    <div className="text-center">Adres zostanie wyświetlony odrazu po akceptacji rezerwacji</div>
+                    <div className="text-center">Adres zostanie wyświetlony od razu po akceptacji rezerwacji</div>
                     <button className="px-5 py-2 text-white bg-[#a28776] rounded-xl hover:bg-[#987C6A]" onClick={handleSubmitAccommodation}>Potwierdź</button>
                 </Callout>
             )}
