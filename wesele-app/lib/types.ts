@@ -36,14 +36,14 @@ export type WelcomeImageOption = z.infer<typeof welcomeImagesSchema>;
 
 export type StatesRSVP = 'questions' | 'summary';
 
-///// ACTUAL TYPES related to mongodb models: /////
+/////__________ ACTUAL TYPES related to mongodb models: __________/////
 export const guest = z.object({
     name: z.string(),
     type: z.enum(['adult', 'child']).optional(),
     table: z.string().uuid().optional(), // do i really need .uuid()?
-    accompaniment: z.boolean().optional(),
-    accommodation: z.boolean().optional(),
-    accommodationResponse: z.boolean().optional(),
+    // accompaniment: z.boolean().optional(),
+    // accommodation: z.boolean().optional(),
+    // accommodationResponse: z.boolean().optional(),
     _id: z.string().optional(),
 });
 
@@ -53,6 +53,10 @@ export const guestAccess = z.object({
     code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
     guests: guest.array(),
     type: z.enum(['pair', 'single']),
+    accompaniment: z.boolean().optional(),
+    accommodation: z.boolean().optional(),
+    accommodationResponse: z.boolean().optional(),
+    _id: z.string().optional(),
 });
 
 export const signInSchema = guestAccess.pick({ code: true });
@@ -62,13 +66,13 @@ export const NewGuestObjectSchema = z.object({
     name: z.string(),
     type: z.enum(['adult', 'child']).optional(),
     table: z.string().optional(),
-    accompaniment: z.object({
-        accompaniment: z.boolean(),
-    }).optional(),
-    accommodation: z.object({
-        needsAccommodation: z.boolean().optional(),
-        accommodationResponse: z.boolean().optional(),
-    }).optional(),
+    // accompaniment: z.object({
+    //     accompaniment: z.boolean(),
+    // }).optional(),
+    // accommodation: z.object({
+    //     needsAccommodation: z.boolean().optional(),
+    //     accommodationResponse: z.boolean().optional(),
+    // }).optional(),
     createdAt: z.string().optional(),
     updatedAt: z.string().optional(),
     __v: z.number().optional(),
@@ -80,19 +84,18 @@ export const GuestAccessSchema = z.object({
     code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
     guests: NewGuestObjectSchema.array(),
     type: z.enum(['pair', 'single']),
-    _id: z.string().optional(),
+    _id: z.string(),
     createdAt: z.string().optional(),
     updatedAt: z.string().optional(),
     __v: z.number().optional(),
+    accompaniment: z.object({
+        accompaniment: z.boolean(),
+    }).optional(),
+    accommodation: z.object({
+        needsAccommodation: z.boolean().optional(),
+        accommodationResponse: z.boolean().optional(),
+    }).optional(),
 });
-// export interface GuestAccessObject {
-//     code: string;
-//     guests: NewGuestObject[];
-//     createdAt?: string;
-//     updatedAt?: string;
-//     __v?: number;
-//     _id?: string;
-// }
 
 export type GuestAccessObject = z.infer<typeof GuestAccessSchema>;
 

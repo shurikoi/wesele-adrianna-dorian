@@ -11,7 +11,7 @@ export default function StartWelcomeContainer({ children, className }: { childre
     return (
         <div className={`h-[80vh] relative ${className}`}>
             <div className="hidden h-full w-full absolute md:flex items-center justify-center">
-                <Image src={"/couple-ai.jpeg"} alt="couple" width={450} height={450} className="md:w-[450px]" />
+                <Image src={"/couple-ai.jpeg"} alt="couple" width={450} height={450} className="md:w-[450px]" priority={true} />
             </div>
             <div className="absolute top-0 right-0 h-full w-full md:hidden">
                 <div className="h-full bg-[url('/ai-img-header.png')] bg-cover bg-center"></div>

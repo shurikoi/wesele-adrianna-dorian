@@ -9,7 +9,7 @@ export default function Szczegoly() {
     return (
         <>
             <WelcomeContainer imageOptionSrc="8">
-                <TitleWelcomeLayout title="Szczegoły" description="wszystko, co musisz wiedzieć" />
+                <TitleWelcomeLayout title="Szczegóły" description="wszystko, co musisz wiedzieć" />
             </WelcomeContainer>
             <PageContainer>
                 <div className="flex flex-col gap-16">

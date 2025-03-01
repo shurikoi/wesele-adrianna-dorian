@@ -4,7 +4,7 @@ import WelcomeContainer from "./WelcomeContainer";
 export default function NoAvailablePage() {
     return (
         <WelcomeContainer imageOptionSrc="4">
-            <TitleWelcomeLayout title="Strona nie dostępna" description="niedługo się pojawi" />
+            <TitleWelcomeLayout title="Strona niedostępna" description="niedługo się pojawi" />
         </WelcomeContainer>
     );
 };
