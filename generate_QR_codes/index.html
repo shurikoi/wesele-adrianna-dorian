@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Codes in PDF</title>
+  </head>
+  <body>
+    <button onclick="generatePDF()">Generate PDF</button>
+
+    <!-- Include QRCode.js and jsPDF libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+      const { jsPDF } = window.jspdf
+
+      // Function to generate QR code as a canvas and return it
+      async function createQRCanvas(text, size) {
+        return new Promise((resolve, reject) => {
+          QRCode.toCanvas(text, { width: size }, (error, canvas) => {
+            if (error) reject(error)
+            else resolve(canvas)
+          })
+        })
+      }
+
+      // Function to generate PDF with QR codes and captions
+      async function generatePDF() {
+        const doc = new jsPDF()
+        const qrSize = 100 // Size of each QR code in pixels
+        const margin = 10 // Margin between elements
+        let yPosition = margin // Starting Y position
+
+        // Example data: array of objects with text and captions
+        const qrData = [
+          { text: 'https://example.com/1', caption: 'Link 1' },
+          { text: 'https://example.com/2', caption: 'Link 2' },
+          { text: 'https://example.com/3', caption: 'Link 3' },
+        ]
+
+        for (let i = 0; i < qrData.length; i++) {
+          const { text, caption } = qrData[i]
+
+          // Generate QR code canvas
+          const qrCanvas = await createQRCanvas(text, qrSize)
+
+          // Convert canvas to image data URL
+          const qrImageData = qrCanvas.toDataURL('image/png')
+
+          // Calculate X position to center the QR code
+          const pageWidth = doc.internal.pageSize.getWidth()
+          const xPosition = (pageWidth - qrSize / 2.83) / 2 // Convert px to roughly pt (72 DPI)
+
+          // Add QR code to PDF
+          doc.addImage(
+            qrImageData,
+            'PNG',
+            xPosition,
+            yPosition,
+            qrSize / 2.83,
+            qrSize / 2.83
+          )
+
+          // Add caption below QR code
+          yPosition += qrSize / 2.83 + 5 // Move down below QR code
+          doc.setFontSize(12)
+          doc.text(caption, pageWidth / 2, yPosition, { align: 'center' })
+
+          // Update Y position for next QR code
+          yPosition += margin + 10
+
+          // Add new page if needed
+          if (
+            yPosition > doc.internal.pageSize.getHeight() - 20 &&
+            i < qrData.length - 1
+          ) {
+            doc.addPage()
+            yPosition = margin
+          }
+        }
+
+        // Save the PDF
+        doc.save('qrcodes_with_captions.pdf')
+      }
+    </script>
+  </body>
+</html>
