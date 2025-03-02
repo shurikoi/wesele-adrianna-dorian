@@ -6,9 +6,10 @@ const GuestOptionalFields = guestAccess.partial();
 type GuestAccessTypePartial = z.infer<typeof GuestOptionalFields>;
 
 export const toNewGuestAccess = (input: GuestAccessTypePartial | GuestAccessTypePartial[]): Partial<GuestAccessObject> | Partial<GuestAccessObject>[] => {
-  const transform = ({ code, type, accompaniment, accommodation, accommodationResponse, _id }: GuestAccessTypePartial): Partial<GuestAccessObject> => {
+  const transform = ({ code, type, accompaniment, accommodation, accommodationResponse, _id, forGreeting }: GuestAccessTypePartial): Partial<GuestAccessObject> => {
     const newGuestObject: Partial<GuestAccessObject> = {};
     if (_id) newGuestObject._id = _id;
+    if (forGreeting) newGuestObject.forGreeting = forGreeting;
     if (type) newGuestObject.type = type;
     if (code) newGuestObject.code = code;
     if (accompaniment !== undefined) newGuestObject.accompaniment = { accompaniment };
