@@ -9,11 +9,10 @@ import { toNewGuestAccess } from "@/utils/toNewGuestAccess";
 export async function POST(req: NextRequest) {
   try {
     await connection();
-    const { code, type, guests, accommodation } = guestAccess.parse(await req.json());
-    const newGuestAccessObject = toNewGuestAccess({ code, type, accommodation });
+    const { code, type, guests, accommodation, forGreeting } = guestAccess.parse(await req.json());
+    const newGuestAccessObject = toNewGuestAccess({ code, type, accommodation, forGreeting });
 
     const newGuests = await Guest.create(toNewGuestsObject(guests));
-    console.log('asdds', { ...newGuestAccessObject, guests: newGuests });
     const newGuestAccess = await GuestAccess.insertOne({ ...newGuestAccessObject, guests: newGuests });
 
     return NextResponse.json({ guestAccess: newGuestAccess }, { status: 201 });

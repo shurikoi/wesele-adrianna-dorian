@@ -57,6 +57,7 @@ export const guestAccess = z.object({
     accommodation: z.boolean().optional(),
     accommodationResponse: z.boolean().optional(),
     _id: z.string().optional(),
+    forGreeting: z.string().optional(),
 });
 
 export const signInSchema = guestAccess.pick({ code: true });
@@ -95,6 +96,7 @@ export const GuestAccessSchema = z.object({
         needsAccommodation: z.boolean().optional(),
         accommodationResponse: z.boolean().optional(),
     }).optional(),
+    forGreeting: z.string().optional(),
 });
 
 export type GuestAccessObject = z.infer<typeof GuestAccessSchema>;

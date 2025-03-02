@@ -1,5 +1,5 @@
 import connection from "@/lib/connection";
-import { guestAccess, NewGuestObject } from "@/lib/types";
+import { guestAccess, GuestAccessObject } from "@/lib/types";
 import GuestAccess from "@/models/GuestAccess";
 import { toNewGuestAccess } from "@/utils/toNewGuestAccess";
 import { NextRequest, NextResponse } from "next/server";
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     try {
         await connection();
         const data = updateGuestAccessSchema.parse(await req.json());
-        const { _id, ...guestAccessUpdateRequest } = toNewGuestAccess(data) as Partial<NewGuestObject>; // because of the parsed data we know that _id field exists
+        const { _id, ...guestAccessUpdateRequest } = toNewGuestAccess(data) as Partial<GuestAccessObject>; // because of the parsed data we know that _id field exists
         const response = await GuestAccess.updateOne({ _id }, { $set: { ...guestAccessUpdateRequest } }).orFail();
         return NextResponse.json({ response }, { status: 200 });
     } catch (error) {
