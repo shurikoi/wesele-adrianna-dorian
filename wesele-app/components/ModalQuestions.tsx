@@ -28,10 +28,10 @@ export default function ModalQuestions({ setCurrentState, setSummary, summary, s
                 toast.error('Błąd: nie znaleziono pytania');
                 return;
             }
-            await fetch('/api/updateGuest', {
+            await fetch('/api/updateGuestAccess', {
                 method: 'POST',
                 body: JSON.stringify({
-                    '_id': guestAccess?.guests[0]._id,
+                    '_id': guestAccess?._id,
                     [foundQuestion['mongodbKey']]: question.answer === 'yes' ? true : false
                 })
             });

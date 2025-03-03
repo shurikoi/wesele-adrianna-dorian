@@ -10,8 +10,8 @@ import { useState } from 'react';
 
 export default function Home() {
     const { isModalOpen } = useModal();
-    const { guestAccess } = useGuestAccess();
-    const [ isAnsweredRSVP, setIsAnsweredRSVP ] = useState(guestAccess ? 'accompaniment' in guestAccess?.guests[0] : false);
+    const { guestAccess, isRSVPanswered } = useGuestAccess();
+    const [ isAnsweredRSVP, setIsAnsweredRSVP ] = useState(isRSVPanswered);
     return (
         <>
             <StartWelcomeContainer className="mb-8 italic md:text-center">
