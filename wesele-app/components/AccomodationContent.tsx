@@ -11,7 +11,7 @@ export default function AccomodationContent() {
     const [isAccommodationResponse, setAccommodationResponse] = useState(isAccommodationResponsed);
 
     const handleSubmitAccommodation = async () => {
-        await fetch('/api/updateGuestAccess', {
+        const updating = fetch('/api/updateGuestAccess', {
             method: 'POST',
             body: JSON.stringify({
                 '_id': guestAccess?._id,
@@ -19,8 +19,12 @@ export default function AccomodationContent() {
                 'accommodationResponse': true
             })
         });
+        await toast.promise(updating, {
+            loading: 'Potwierdzanie...',
+            success: 'Nocleg został potwierdzony',
+            error: 'Błąd podczas potwierdzania noclegu',
+        })
         setAccommodationResponse(true);
-        toast.success('Nocleg został potwierdzony');
     };
 
     return (

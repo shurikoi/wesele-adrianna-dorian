@@ -51,7 +51,7 @@ export const menuDishes: DropdownItem[] = [
     },
     {
       id: uuidv4(),
-      title: 'Zakąski podane na weselu uzupełniane są na bieżąco do 3 obiadu',
+      title: 'Zakąski',
       content: [
         'Pasztet z żurawiną',
         'Wrapy z kurczaka/wegetariańskie',

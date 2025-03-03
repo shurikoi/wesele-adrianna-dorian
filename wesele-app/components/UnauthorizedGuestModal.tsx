@@ -18,12 +18,12 @@ export const UnauthorizedGuestModal = () => {
             toast.error(codeParsed.error.errors[0].message);
             return;
         };
-        const response = await handleSignIn({ code: codeParsed.data.code.toLowerCase() });
-        if (response?.error) {
-            toast.error("Nieprawidłowy kod dostępu");
-            return;
-        }
-        toast.success("Zalogowano pomyślnie");
+        const signingIn = handleSignIn({ code: codeParsed.data.code.toLowerCase() });
+        await toast.promise(signingIn, {
+            loading: "Logowanie...",
+            success: "Zalogowano pomyślnie",
+            error: "Błąd podczas logowania",
+        })
         closeModal();
     };
     return (
