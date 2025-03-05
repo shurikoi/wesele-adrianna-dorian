@@ -18,6 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     await connection();
                     const { code } = await signInSchema.parseAsync(credentials);
                     const guest = await GuestAccess.findOne({ code }).populate('guests');
+                    console.log('guest', guest);
                     if (!guest) throw new Error("Nieprawidłowy kod dostępu");
                     return guest;
                 } catch (error) {
