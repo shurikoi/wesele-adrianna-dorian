@@ -1,27 +1,27 @@
 [
   {
-    "code": "ukraina",
+    "code": "szafir",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Roksana i Grzegorz",
     "guests": [{ "name": "Roksana Skwara" }, { "name": "Grzegorz Skwara" }]
   },
   {
-    "code": "polska",
+    "code": "sosna",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Rajan",
     "guests": [{ "name": "Rajan Skwara" }]
   },
   {
-    "code": "niemcy",
+    "code": "diament",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Teresa i Jan",
     "guests": [{ "name": "Teresa Glica" }, { "name": "Jan Glica" }]
   },
   {
-    "code": "francja",
+    "code": "skarb",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Patrycja, Łukasz i Natan",
@@ -32,14 +32,14 @@
     ]
   },
   {
-    "code": "włochy",
+    "code": "koral",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Dominika i Dominik",
     "guests": [{ "name": "Dominik Jasiński" }, { "name": "Dominika Gałązka" }]
   },
   {
-    "code": "hiszpania",
+    "code": "wrona",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Martyna, Janusz, Vanessa i Dylan",
@@ -51,119 +51,119 @@
     ]
   },
   {
-    "code": "portugalia",
+    "code": "jedwab",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Jagoda i Łukasz",
     "guests": [{ "name": "Jagoda Świta" }, { "name": "Łukasz Świta" }]
   },
   {
-    "code": "grecja",
+    "code": "pióro",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Magdalena i Artur",
     "guests": [{ "name": "Magdalena Jędrysik" }, { "name": "Artur Jędrysik" }]
   },
   {
-    "code": "turcja",
+    "code": "zebra",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Jagoda i Tomek",
     "guests": [{ "name": "Jagoda Wieczorek" }, { "name": "Tomasz Wieczorek" }]
   },
   {
-    "code": "egipt",
+    "code": "maska",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Krzysiek",
     "guests": [{ "name": "Krzysztof Klimek", "shortName": "Krzysiek" }]
   },
   {
-    "code": "indie",
+    "code": "piano",
     "type": "single",
     "accommodation": true,
     "forGreeting": "Mirka",
     "guests": [{ "name": "Mirosława Kupka", "shortName": "Mirka" }]
   },
   {
-    "code": "chiny",
+    "code": "motyl",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Ania i Oskar",
     "guests": [{ "name": "Anna Orzechowska" }, { "name": "Oskar Blaskiewicz" }]
   },
   {
-    "code": "japonia",
+    "code": "ptaki",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Oliwia i Adam",
     "guests": [{ "name": "Oliwia Klimowicz" }, { "name": "Adam Katowicz" }]
   },
   {
-    "code": "korea",
+    "code": "smoki",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Ania i Jakub",
     "guests": [{ "name": "Anna Fisiak" }, { "name": "Jakub Niedomagała" }]
   },
   {
-    "code": "australia",
+    "code": "stokrotka",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Agata i Igor",
     "guests": [{ "name": "Agata Wilczewska" }, { "name": "Igor Jankowicz" }]
   },
   {
-    "code": "kanada",
+    "code": "żabka",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Paulina i Błażej",
     "guests": [{ "name": "Paulina Łukasiewicz" }, { "name": "Błażej Gosik" }]
   },
   {
-    "code": "meksyk",
+    "code": "moda",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Weronika i Bartek",
     "guests": [{ "name": "Weronika Krogulec" }, { "name": "Bartosz Krogulec" }]
   },
   {
-    "code": "brazylia",
+    "code": "rodzina",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Michał",
     "guests": [{ "name": "Michał Cichacki" }]
   },
   {
-    "code": "argentyna",
+    "code": "tęcza",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Magda i Robert",
     "guests": [{ "name": "Magdalena Rzyska" }, { "name": "Robert Wójt" }]
   },
   {
-    "code": "chile",
+    "code": "złoto",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Adam",
     "guests": [{ "name": "Adam Dróżdż" }]
   },
   {
-    "code": "peru",
+    "code": "diadem",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Wiktor",
     "guests": [{ "name": "Wiktor Sobański" }]
   },
   {
-    "code": "kolumbia",
+    "code": "zegar",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Magda i Mikołaj",
     "guests": [{ "name": "Magdalena Kujawska" }, { "name": "Mikołaj Kujawski" }]
   },
   {
-    "code": "wenezuela",
+    "code": "serce",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Asia i Bartek",
@@ -173,56 +173,56 @@
     ]
   },
   {
-    "code": "norwegia",
+    "code": "mosty",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Bartek",
     "guests": [{ "name": "Bartosz Wiśniewski" }]
   },
   {
-    "code": "szwecja",
+    "code": "hymn",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Jakub",
     "guests": [{ "name": "Jakub Olejniczak" }]
   },
   {
-    "code": "finlandia",
+    "code": "epos",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Angelika i Wojtek",
     "guests": [{ "name": "Angelika Jóźwiak" }, { "name": "Wojciech Pietrzak" }]
   },
   {
-    "code": "dania",
+    "code": "wakacje",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Marta i Bartek",
     "guests": [{ "name": "Marta Kuźniarek" }, { "name": "Bartosz Przybylak" }]
   },
   {
-    "code": "holandia",
+    "code": "kultura",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Sebastian",
     "guests": [{ "name": "Sebastian Kuc" }]
   },
   {
-    "code": "belgia",
+    "code": "kraj",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Kamil i Marcel",
     "guests": [{ "name": "Kamil Bartkiewicz" }, { "name": "Marcel Borka" }]
   },
   {
-    "code": "szwajcaria",
+    "code": "truskawka",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Asia i Bartek",
     "guests": [{ "name": "Joanna Wiśnik" }, { "name": "Bartłomiej Nowicki" }]
   },
   {
-    "code": "austria",
+    "code": "obyczaj",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Gosia i Konrad",
@@ -232,70 +232,70 @@
     ]
   },
   {
-    "code": "czechy",
+    "code": "droga",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Iwona i Dominik",
     "guests": [{ "name": "Iwona Kubik" }, { "name": "Dominik Kubik" }]
   },
   {
-    "code": "słowacja",
+    "code": "farba",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Kamil",
     "guests": [{ "name": "Kamil Bisia" }]
   },
   {
-    "code": "węgry",
+    "code": "film",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Martyna i Michał",
     "guests": [{ "name": "Martyna Grabarczyk" }, { "name": "Michał Barysa" }]
   },
   {
-    "code": "rumunia",
+    "code": "forma",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Adrian",
     "guests": [{ "name": "Adrian Buchta" }]
   },
   {
-    "code": "bułgaria",
+    "code": "jagoda",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Julia",
     "guests": [{ "name": "Julia Bukarowicz" }]
   },
   {
-    "code": "serbia",
+    "code": "muzyka",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Mateusz",
     "guests": [{ "name": "Mateusz Poborczyk" }]
   },
   {
-    "code": "chorwacja",
+    "code": "nauka",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Mateusz",
     "guests": [{ "name": "Mateusz Piła" }]
   },
   {
-    "code": "słowenia",
+    "code": "lustro",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Joanna i Michał",
     "guests": [{ "name": "Joanna Ciura" }, { "name": "Michał Ciura" }]
   },
   {
-    "code": "litwa",
+    "code": "srebro",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Ewa i Zenon",
     "guests": [{ "name": "Ewa Ciura" }, { "name": "Zenon Ciura" }]
   },
   {
-    "code": "łotwa",
+    "code": "melodia",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Kasia i Piotr",
@@ -305,77 +305,77 @@
     ]
   },
   {
-    "code": "estonia",
+    "code": "perła",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Paulina i Bartek",
     "guests": [{ "name": "Paulina Cudnik" }, { "name": "Bartosz Persa" }]
   },
   {
-    "code": "islandia",
+    "code": "bajka",
     "type": "single",
     "accommodation": true,
     "forGreeting": "nikodem",
     "guests": [{ "name": "Nikodem Kowalski" }]
   },
   {
-    "code": "irlandia",
+    "code": "nuta",
     "type": "single",
     "accommodation": true,
     "forGreeting": "Dawid",
     "guests": [{ "name": "Dawid Gruchała" }]
   },
   {
-    "code": "usa",
+    "code": "esej",
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Arleta i Andrzej",
     "guests": [{ "name": "Arleta Sawicka" }, { "name": "Andrzej Sawicki" }]
   },
   {
-    "code": "kuba",
+    "code": "guzik",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Arleta i Remek",
     "guests": [{ "name": "Arleta Szymczyk" }, { "name": "Remigiusz Szymczyk" }]
   },
   {
-    "code": "jamajka",
+    "code": "plaża",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Julia i Sebastian",
     "guests": [{ "name": "Julia Kuryłek" }, { "name": "Sebastian Szymczyk" }]
   },
   {
-    "code": "haita",
+    "code": "sukno",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Gabrysia i Henryk",
     "guests": [{ "name": "Gabrysia Kuchler" }, { "name": "Henryk Kuchler" }]
   },
   {
-    "code": "dominikana",
+    "code": "futro",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Daria i Maciej",
     "guests": [{ "name": "Daria Kuchler" }, { "name": "Maciej Matuszewski" }]
   },
   {
-    "code": "portoryko",
+    "code": "opera",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Ania i Paweł",
     "guests": [{ "name": "Anna Bątor" }, { "name": "Paweł Bątor" }]
   },
   {
-    "code": "gwatemala",
+    "code": "palma",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Iwona i Konrad",
     "guests": [{ "name": "Iwona Pryc" }, { "name": "Konrad Pryc" }]
   },
   {
-    "code": "honduras",
+    "code": "arena",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Martyna, Rafał, Izabela i Kamil",
@@ -387,129 +387,196 @@
     ]
   },
   {
-    "code": "nikaragua",
+    "code": "nowela",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Łukasz",
     "guests": [{ "name": "Łukasz Pryca" }]
   },
   {
-    "code": "kostaryka",
+    "code": "komedia",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Natalia i Rafał",
     "guests": [{ "name": "Natalia Wesołowska" }, { "name": "Rafał Wesołowski" }]
   },
   {
-    "code": "panama",
+    "code": "wczasy",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Ania i Przemek",
     "guests": [{ "name": "Anna Pryc" }, { "name": "Przemysław Pryc" }]
   },
   {
-    "code": "urugwaj",
+    "code": "oda",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Rafał",
     "guests": [{ "name": "Rafał Pryca" }]
   },
   {
-    "code": "paragwaj",
+    "code": "ogień",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Kamila i Radek",
     "guests": [{ "name": "Kamila Jasitczak" }, { "name": "Radosław Jasitczak" }]
   },
   {
-    "code": "boliwia",
+    "code": "uśmiech",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Marta",
     "guests": [{ "name": "Marta Jasitczak" }]
   },
   {
-    "code": "ekwador",
+    "code": "liryka",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Kinga",
     "guests": [{ "name": "Kinga Jasitczak" }]
   },
   {
-    "code": "gwinea",
+    "code": "sonet",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Monika i Tomasz",
     "guests": [{ "name": "Monika Grudzińska" }, { "name": "Tomasz Grudziński" }]
   },
   {
-    "code": "senegal",
+    "code": "netflix",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Urszula",
     "guests": [{ "name": "Urszula Jasitczak" }]
   },
   {
-    "code": "ghana",
+    "code": "romans",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Eugenia",
     "guests": [{ "name": "Eugenia Kuchler" }]
   },
   {
-    "code": "nigeria",
+    "code": "bukiet",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Bartek",
     "guests": [{ "name": "Bartosz Kuchler" }]
   },
   {
-    "code": "kenya",
+    "code": "ferie",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Agnieszka i Robert",
     "guests": [{ "name": "Agnieszka Mandat" }, { "name": "Robert Mandat" }]
   },
   {
-    "code": "tanzania",
+    "code": "widok",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Dominika",
     "guests": [{ "name": "Dominika Mandat" }]
   },
   {
-    "code": "uganda",
+    "code": "słowa",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Kacper",
     "guests": [{ "name": "Kacper Mandat" }]
   },
   {
-    "code": "etiopia",
+    "code": "temat",
     "type": "single",
     "accommodation": false,
     "forGreeting": "Weronika",
     "guests": [{ "name": "Weronika Mandat" }]
   },
   {
-    "code": "somalia",
+    "code": "telefon",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Natalia i Szymon",
     "guests": [{ "name": "Natalia Grobelna" }, { "name": "Szymon Wróbel" }]
   },
   {
-    "code": "sudan",
+    "code": "książka",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Julia i Edward",
     "guests": [{ "name": "Julia Durka" }, { "name": "Edward Clarke" }]
   },
   {
-    "code": "libia",
+    "code": "radio",
+    "type": "pair",
+    "accommodation": false,
+    "forGreeting": "Martyna i Tomek",
+    "guests": [{ "name": "Martyna Janas" }, { "name": "Tomasz Richert" }]
+  },
+  {
+    "code": "wiosna",
+    "type": "pair",
+    "accommodation": false,
+    "forGreeting": "Aneta i Tomasz",
+    "guests": [{ "name": "Aneta Kisiel" }, { "name": "Tomasz Kisiel" }]
+  },
+  {
+    "code": "rzeka",
+    "type": "single",
+    "accommodation": false,
+    "forGreeting": "Krystyna",
+    "guests": [{ "name": "Krystyna Łyskawa" }]
+  },
+  {
+    "code": "trawa",
+    "type": "single",
+    "accommodation": true,
+    "forGreeting": "Michał",
+    "guests": [{ "name": "Michał Nowak" }]
+  },
+  {
+    "code": "rozum",
+    "type": "single",
+    "accommodation": true,
+    "forGreeting": "Maria",
+    "guests": [{ "name": "Maria Kidawska" }]
+  },
+  {
+    "code": "ballada",
+    "type": "pair",
+    "accommodation": false,
+    "forGreeting": "Agnieszka i Dariusz",
+    "guests": [
+      { "name": "Agnieszka Rogozinska" },
+      { "name": "Dariusz Rogozinski" }
+    ]
+  },
+  {
+    "code": "spokój",
+    "type": "single",
+    "accommodation": false,
+    "forGreeting": "Kazimiera",
+    "guests": [{ "name": "Kazimiera Łyskawa" }]
+  },
+  {
+    "code": "pałac",
+    "type": "pair",
+    "accommodation": false,
+    "forGreeting": "Barbara i Jan",
+    "guests": [{ "name": "Barbara Stefanik" }, { "name": "Jan Stefanik" }]
+  },
+  {
+    "code": "świat",
     "type": "pair",
     "accommodation": false,
     "forGreeting": "Krystyna i Józef",
     "guests": [{ "name": "Krystyna Łyskawa" }, { "name": "Józef Łyskawa" }]
+  },
+  {
+    "code": "świeca",
+    "guests": []
+  },
+  {
+    "code": "taniec",
+    "guests": []
   }
 ]

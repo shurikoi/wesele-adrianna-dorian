@@ -6,31 +6,21 @@ const qrData = require('../guestAccessList.json'); // Your QR code data source
 const outputFile = 'output.pdf';
 
 // default letter size: 612x792 points
-const doc = new PDFDocument({size: 'A4'});
+const doc = new PDFDocument({size: 'A4', margin: 0});
 const writeStream = fs.createWriteStream(outputFile);
 doc.pipe(writeStream);
 
 doc.registerFont('french', './im-fell-french-pro.otf');
 doc.font('french');
 
-// const marginX = 46;           // Left and right margin
-// const gapX = 40;             // Horizontal gap between QR codes
-// const qrWidth = 100;         
-// const topMargin = 32;        
-// const rowHeight = 130;       
-// const gapY = 32;             // Vertical gap between rows
-// const columnsPerPage = 4;    
-// const rowsPerPage = 4;       
-// const itemsPerPage = columnsPerPage * rowsPerPage; 
-
 const marginX = 15;           // Left and right margin
 const gapX = 20;             // Horizontal gap between QR codes
 const qrWidth = 51;         
-const topMargin = 40;        
+const topMargin = 25;        
 const rowHeight = 55;       
 const gapY = 25;             // Vertical gap between rows
 const columnsPerPage = 8;    
-const rowsPerPage = 9;       
+const rowsPerPage = 10;       
 const itemsPerPage = columnsPerPage * rowsPerPage; 
 
 if (!Array.isArray(qrData)) {
@@ -89,8 +79,3 @@ writeStream.on('finish', () => {
 });
 
 
-// for (const [index, data] of validData.entries()) {
-//   if (data.code.length > 5) {
-//     console.log(data.code)
-//   }
-// }
