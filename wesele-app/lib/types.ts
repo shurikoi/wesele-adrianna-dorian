@@ -50,7 +50,7 @@ export const guest = z.object({
 export type GuestType = z.infer<typeof guest>;
 
 export const guestAccess = z.object({
-    code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
+    code: z.string({ required_error: "Kod jest pusty" }),
     guests: guest.array(),
     type: z.enum(['pair', 'single']),
     accompaniment: z.boolean().optional(),
@@ -82,7 +82,7 @@ export const NewGuestObjectSchema = z.object({
 export type NewGuestObject = z.infer<typeof NewGuestObjectSchema>;
 
 export const GuestAccessSchema = z.object({
-    code: z.string({ required_error: "Kod jest pusty" }).length(5, "Kod musi mieć 5 znaków"),
+    code: z.string({ required_error: "Kod jest pusty" }),
     guests: NewGuestObjectSchema.array(),
     type: z.enum(['pair', 'single']),
     _id: z.string(),

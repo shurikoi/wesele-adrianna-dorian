@@ -8,6 +8,7 @@ import RegularButton from "./ui/buttons/RegularButton";
 import { signInSchema } from "@/lib/types";
 import toast from "react-hot-toast";
 import { useModal } from "./contexts/ModalProvider";
+import signInToast from "@/utils/signInToast";
 
 export const UnauthorizedGuestModal = () => {
     const { closeModal } = useModal();
@@ -19,11 +20,7 @@ export const UnauthorizedGuestModal = () => {
             return;
         };
         const signingIn = handleSignIn({ code: codeParsed.data.code.toLowerCase() });
-        await toast.promise(signingIn, {
-            loading: "Logowanie...",
-            success: "Zalogowano pomyślnie",
-            error: "Błąd podczas logowania",
-        })
+        await signInToast(signingIn);
         closeModal();
     };
     return (
