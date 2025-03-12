@@ -20,7 +20,7 @@ export const UnauthorizedGuestModal = () => {
             return;
         };
         const signingIn = handleSignIn({ code: codeParsed.data.code.toLowerCase() });
-        signInToast(signingIn);
+        await signInToast(signingIn);
         closeModal();
     };
     return (

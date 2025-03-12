@@ -1,13 +1,13 @@
 import Agenda from "@/components/Agenda";
 import FAQ from "@/components/FAQ";
 import Menu from "@/components/Menu";
-import NoAvailablePage from "@/components/NoAvailablePage";
 import PageContainer from "@/components/ui/PageContainer";
 import TitleWelcomeLayout from "@/components/ui/TitleWelcomeLayout";
 import WelcomeContainer from "@/components/WelcomeContainer";
+// import NoAvailablePage from "@/components/NoAvailablePage";
 
 export default function Szczegoly() {
-    if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
+    // if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
     return (
         <>
             <WelcomeContainer imageOptionSrc="8">

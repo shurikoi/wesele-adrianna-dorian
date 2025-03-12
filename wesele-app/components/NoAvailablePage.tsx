@@ -1,10 +1,15 @@
-import TitleWelcomeLayout from "./ui/TitleWelcomeLayout";
+import TitleWelcomeDescription from "./ui/TitleWelcomeDescription";
 import WelcomeContainer from "./WelcomeContainer";
 
 export default function NoAvailablePage() {
     return (
-        <WelcomeContainer imageOptionSrc="4">
-            <TitleWelcomeLayout title="Strona niedostępna" description="niedługo się pojawi" />
+        <WelcomeContainer imageOptionSrc="5">
+            <TitleWelcomeDescription>
+                <div className="text-center text-4xl md:text-6xl text-textPeach">STRONA NIEDOSTĘPNA</div>
+            </TitleWelcomeDescription>
+            <TitleWelcomeDescription>
+                <div className="text-center text-textPeach">niedługo się pojawi</div>
+            </TitleWelcomeDescription>
         </WelcomeContainer>
     );
 };
