@@ -8,7 +8,7 @@
   },
   {
     "code": "sosna",
-    "type": "pair",
+    "type": "single",
     "accommodation": true,
     "forGreeting": "Rajan",
     "guests": [{ "name": "Rajan Skwara" }]
@@ -76,14 +76,14 @@
     "type": "pair",
     "accommodation": true,
     "forGreeting": "Krzysiek",
-    "guests": [{ "name": "Krzysztof Klimek", "shortName": "Krzysiek" }]
+    "guests": [{ "name": "Krzysztof Klimek"}]
   },
   {
     "code": "piano",
     "type": "single",
     "accommodation": true,
     "forGreeting": "Mirka",
-    "guests": [{ "name": "Mirosława Kupka", "shortName": "Mirka" }]
+    "guests": [{ "name": "Mirosława Kupka"}]
   },
   {
     "code": "motyl",
