@@ -39,7 +39,7 @@ export function useGuestAccess() {
 
     const isMultipleGuests = (guestAccess?.guests?.length ?? 0) > 1 || false;
 
-    const forGreeting = guestAccess?.forGreeting || false;
+    const forGreeting = guestAccess?.forGreeting || "";
 
     return {
         guestAccess, isAccommodationResponsed, isAccommodationNeeded, isMultipleGuests,
