@@ -28,7 +28,7 @@ export default function Header({ className }: { className?: React.ComponentProps
             </div>
             <div className="text-[14px] flex justify-around pt-2">
                 {pages.map((page, index) => (
-                    <Link key={index} className="p-3 hover:text-white/70 transition-colors duration-150" href={`/${latinize(page, { lowerCase: true })}`}>
+                    <Link key={index} className="py-3 px-2 hover:text-white/70 transition-colors duration-150" href={`/${latinize(page, { lowerCase: true })}`}>
                         <span className={currentPage === latinize(page, { lowerCase: true }) ? 'font-bold' : ''}>{page}</span>
                     </Link>
                 ))}
