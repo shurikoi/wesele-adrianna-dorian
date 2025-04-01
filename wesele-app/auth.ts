@@ -31,9 +31,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     callbacks: {
         async jwt({ token, user }) {
             await connection();
-            const guestAccess = await GuestAccess.findOne({ code: user?.code || (token?.user as GuestAccessObject).code }).populate('guests');
-            if (guestAccess) {
-                token.user = guestAccess;
+            // const guestAccess = await GuestAccess.findOne({ code: user?.code || (token?.user as GuestAccessObject).code }).populate('guests');
+            // if (guestAccess) {
+            //     token.user = guestAccess;
+            // }
+            
+            if (user) {
+                token.user = user as GuestAccessObject;
             }
             return token;
         },
