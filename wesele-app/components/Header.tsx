@@ -8,9 +8,9 @@ import { useModal } from "./contexts/ModalProvider";
 import GuestModal from "./GuestModal";
 import { useGuestAccess } from "./contexts/GuestAccessProvider";
 
-export default function Header({ className }: { className?: React.ComponentProps<'header'>['className'] }) {
+export default function Header({ className }: { className?: React.ComponentProps<'header'>['className']; }) {
     const { openModal, isModalOpen } = useModal();
-    const { guestAccess, forGreeting } = useGuestAccess();
+    const { guestAccess, forGreeting, isAdmin } = useGuestAccess();
 
     const pages = ['Dojazd', 'Nocleg', 'Szczegóły', 'Stoły', 'Zdjęcia'];
 
@@ -23,7 +23,7 @@ export default function Header({ className }: { className?: React.ComponentProps
                 <div className="font-fellFrench italic text-3xl"><Link href={'/'}>&</Link></div>
                 <div className="flex relative cursor-pointer" onClick={() => openModal("Guest")}>
                     {guestAccess ? `Cześć ${forGreeting}!` : 'Zaloguj się'}
-                    <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="arrow" width={11} height={11} priority={true}></Image>             
+                    <Image className="-rotate-180 ml-1" src="/vercel.svg" alt="arrow" width={11} height={11} priority={true}></Image>
                 </div>
             </div>
             <div className="text-[14px] flex justify-around pt-2">
@@ -33,7 +33,12 @@ export default function Header({ className }: { className?: React.ComponentProps
                     </Link>
                 ))}
             </div>
-            {isModalOpen === "Guest"  && <GuestModal />}
+            {isAdmin && currentPage !== "admin" && (
+                <Link href={'/admin/guests'}>
+                    <div className="text-[14px] flex justify-center py-3 px-2 hover:text-white/70 cursor-pointer bg-yellow-500 animate-slide-in-left" onClick={() => console.log('click')}>Przeglądaj gości</div>
+                </Link>
+            )}
+            {isModalOpen === "Guest" && <GuestModal />}
         </header>
     );
 };
