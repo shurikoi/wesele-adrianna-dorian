@@ -36,44 +36,37 @@ export type WelcomeImageOption = z.infer<typeof welcomeImagesSchema>;
 
 export type StatesRSVP = 'questions' | 'summary';
 
-/////__________ ACTUAL TYPES related to mongodb models: __________/////
+// actual mongodb schema 
 export const guest = z.object({
     name: z.string(),
     type: z.enum(['adult', 'child']).optional(),
     table: z.string().uuid().optional(), // do i really need .uuid()?
-    // accompaniment: z.boolean().optional(),
-    // accommodation: z.boolean().optional(),
-    // accommodationResponse: z.boolean().optional(),
     _id: z.string().optional(),
 });
 
 export type GuestType = z.infer<typeof guest>;
 
+// use on backend (rethriving from req body) and communicating with api
 export const guestAccess = z.object({
     code: z.string({ required_error: "Kod jest pusty" }),
     guests: guest.array(),
-    type: z.enum(['pair', 'single']),
+    type: z.enum(['pair', 'single']).optional(),
+    role: z.enum(['guest', 'admin']).optional(),
     accompaniment: z.boolean().optional(),
     accommodation: z.boolean().optional(),
     accommodationResponse: z.boolean().optional(),
     _id: z.string().optional(),
-    forGreeting: z.string().optional(),
+    forGreeting: z.string(),
 });
 
 export const signInSchema = guestAccess.pick({ code: true });
 
+// use on backend (rethriving from req body) and communicating with api
 export const NewGuestObjectSchema = z.object({
     _id: z.string().optional(),
     name: z.string(),
     type: z.enum(['adult', 'child']).optional(),
     table: z.string().optional(),
-    // accompaniment: z.object({
-    //     accompaniment: z.boolean(),
-    // }).optional(),
-    // accommodation: z.object({
-    //     needsAccommodation: z.boolean().optional(),
-    //     accommodationResponse: z.boolean().optional(),
-    // }).optional(),
     createdAt: z.string().optional(),
     updatedAt: z.string().optional(),
     __v: z.number().optional(),
@@ -81,11 +74,13 @@ export const NewGuestObjectSchema = z.object({
 
 export type NewGuestObject = z.infer<typeof NewGuestObjectSchema>;
 
+// actual mongodb schema
 export const GuestAccessSchema = z.object({
+    _id: z.string(),
     code: z.string({ required_error: "Kod jest pusty" }),
     guests: NewGuestObjectSchema.array(),
     type: z.enum(['pair', 'single']),
-    _id: z.string(),
+    role: z.enum(['guest', 'admin']).optional(),
     createdAt: z.string().optional(),
     updatedAt: z.string().optional(),
     __v: z.number().optional(),
