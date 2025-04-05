@@ -7,7 +7,10 @@ import { Toaster } from "react-hot-toast";
 import GuestAccessProvider from "@/components/contexts/GuestAccessProvider";
 import AuthProvider from "@/components/contexts/AuthProvider";
 import Header from "@/components/Header";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import TanstackProvider from "@/components/contexts/TanstackProvider";
+import "react-loading-skeleton/dist/skeleton.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,15 +39,19 @@ export default function RootLayout({
       >
         <AuthProvider>
           <GuestAccessProvider>
-            <ModalProvider>
-              <Toaster />
-              <div id="modals-root" className="fixed z-50" />
-              <div className="relative">
-                <Header className="p-8 absolute top-0 left-0 z-40 w-full" />
-                {children}
-                <Analytics />
-              </div>
-            </ModalProvider>
+            <TanstackProvider>
+              <ModalProvider>
+                <Toaster />
+                <SkeletonTheme baseColor="#E8DCCB" highlightColor="#D6C5B1">
+                  <div id="modals-root" className="fixed z-50" />
+                  <div className="relative">
+                    <Header className="p-8 absolute top-0 left-0 z-40 w-full" />
+                    {children}
+                    <Analytics />
+                  </div>
+                </SkeletonTheme>
+              </ModalProvider>
+            </TanstackProvider>
           </GuestAccessProvider>
         </AuthProvider>
       </body>

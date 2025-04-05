@@ -32,6 +32,7 @@ export function useGuestAccess() {
     const { guestAccess } = useContext(GuestAccessContext);
     const isAccommodationResponsed = guestAccess?.accommodation?.accommodationResponse || false;
     const isAccommodationNeeded = guestAccess?.accommodation?.needsAccommodation || false;
+    const isAdmin = guestAccess?.role === 'admin' || false;
 
     const isRSVPanswered = guestAccess ? 'accompaniment' in guestAccess : false;
 
@@ -43,6 +44,6 @@ export function useGuestAccess() {
 
     return {
         guestAccess, isAccommodationResponsed, isAccommodationNeeded, isMultipleGuests,
-        isAccompaniment, forGreeting, isRSVPanswered
+        isAccompaniment, forGreeting, isRSVPanswered, isAdmin
     };
 }

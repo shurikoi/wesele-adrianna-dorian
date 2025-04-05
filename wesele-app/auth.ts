@@ -34,6 +34,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             const guestAccess = await GuestAccess.findOne({ code: user?.code || (token?.user as GuestAccessObject).code }).populate('guests');
             if (guestAccess) {
                 token.user = guestAccess;
+                token.role = guestAccess?.role || "guest";
             }
             return token;
         },
