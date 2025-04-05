@@ -35,7 +35,7 @@ export default function Header({ className }: { className?: React.ComponentProps
             </div>
             {isAdmin && currentPage !== "admin" && (
                 <Link href={'/admin/guests'}>
-                    <div className="text-[14px] flex justify-center py-3 px-2 hover:text-white/70 cursor-pointer bg-yellow-500 animate-slide-in-left" onClick={() => console.log('click')}>Przeglądaj gości</div>
+                    <div className="text-[14px] flex justify-center py-3 px-2 hover:text-white/70 cursor-pointer bg-yellow-500 animate-slide-in-left">Przeglądaj gości</div>
                 </Link>
             )}
             {isModalOpen === "Guest" && <GuestModal />}

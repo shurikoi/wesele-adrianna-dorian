@@ -22,6 +22,10 @@ export const UnauthorizedGuestModal = () => {
         const signingIn = handleSignIn({ code: codeParsed.data.code.toLowerCase() });
         await signInToast(signingIn);
         closeModal();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
     };
     return (
         <div className="flex flex-col gap-5 w-full items-center">
