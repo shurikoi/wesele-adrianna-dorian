@@ -7,7 +7,6 @@ export default function GuestCard({ guestAccess }: { guestAccess?: GuestAccessOb
 
   return (
     <div className="w-full bg-[#e2d3b9] border border-[#8e6944] rounded-2xl py-5 px-3 text-[#5A4636]">
-      <div className="">Kod: {guestAccess?.code || <Skeleton width={100} />}</div>
       <div className="text-3xl font-fellFrench text-[#4c3827]">
         {guestAccess?.forGreeting || <Skeleton count={2} width={300} height={35}/>}
       </div>

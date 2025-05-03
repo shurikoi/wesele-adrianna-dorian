@@ -5,10 +5,17 @@ import GuestAccess from "@/models/GuestAccess";
 import { guestAccess } from "@/lib/types";
 import { toNewGuestsObject } from "@/utils/toNewGuestsObject";
 import { toNewGuestAccess } from "@/utils/toNewGuestAccess";
+import { auth } from "@/auth";
 
 const guestAccesses = guestAccess.array();
 
 export async function POST(req: NextRequest) {
+    const session = await auth();
+
+    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (session?.user?.role !== "admin") return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    if (!req.body) return NextResponse.json({ error: "No data provided" }, { status: 400 });
+
     try {
         await connection();
         const data = guestAccesses.parse(await req.json());

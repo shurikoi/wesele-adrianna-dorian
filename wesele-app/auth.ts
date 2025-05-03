@@ -20,7 +20,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     const guest = await GuestAccess.findOne({ code }).populate('guests');
                     console.log('guest', guest);
                     if (!guest) throw new Error("Nieprawidłowy kod dostępu");
-                    return guest;
+                    return guest.toObject(); 
                 } catch (error) {
                     if (error instanceof Error) return error.message;
                     return error;
@@ -33,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             await connection();
             const guestAccess = await GuestAccess.findOne({ code: user?.code || (token?.user as GuestAccessObject).code }).populate('guests');
             if (guestAccess) {
-                token.user = guestAccess;
+                token.user = guestAccess.toObject();
                 token.role = guestAccess?.role || "guest";
             }
             return token;
