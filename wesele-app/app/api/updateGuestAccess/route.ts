@@ -1,22 +1,28 @@
+import { auth } from "@/auth";
 import connection from "@/lib/connection";
 import { guestAccess, GuestAccessObject } from "@/lib/types";
 import GuestAccess from "@/models/GuestAccess";
 import { toNewGuestAccess } from "@/utils/toNewGuestAccess";
-import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 import { ZodError } from "zod";
 
 const updateGuestAccessSchema = guestAccess.partial().required({ _id: true });
 
 export async function POST(req: NextRequest) {
-    const token = await getToken({ req, secret: process.env.AUTH_SECRET });
-    const userId = token?.user?._id;
-    if (!userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const session = await auth();
+
+    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (!req.body) return NextResponse.json({ error: "No data provided" }, { status: 400 });
+
     try {
         await connection();
         const data = updateGuestAccessSchema.parse(await req.json());
 
-        if (data._id !== userId) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        if (data._id !== session.user?._id) {
+            if (session?.user?.role !== "admin") {
+                return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+            }
+        }
 
         const { _id, ...guestAccessUpdateRequest } = toNewGuestAccess(data) as Partial<GuestAccessObject>; // because of the parsed data we know that _id field exists
         const response = await GuestAccess.updateOne({ _id }, { $set: { ...guestAccessUpdateRequest } }).orFail();
