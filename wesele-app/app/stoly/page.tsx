@@ -6,7 +6,7 @@ import TableContainer from "@/components/ui/TableContainer";
 import TitleWelcomeLayout from "@/components/ui/TitleWelcomeLayout";
 import WelcomeContainer from "@/components/WelcomeContainer";
 
-export default function Szczegoly() {
+export default function Stoly() {
     if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
     return (
         <>
