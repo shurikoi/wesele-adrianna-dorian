@@ -3,7 +3,7 @@ import { Schema, model, models } from "mongoose";
 const GuestSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, enum: ["adult", "child"], default: 'adult', required: true },
-  table: { type: Schema.Types.ObjectId, ref: "Table", default: null },
+  table: { type: String, enum: ["1", "2", "3", "4"], default: 'null' },
   // accompaniment: {
   //   accompaniment: { type: Boolean },
   //   // accompanimentTime: { type: Date, default: null }

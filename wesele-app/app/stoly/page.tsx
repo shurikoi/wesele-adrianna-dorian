@@ -14,20 +14,20 @@ export default function Stoly() {
                 <TitleWelcomeLayout title="Stoły" description="sala weselna" />
             </WelcomeContainer>
             <PageContainer>
-                <div className="w-full flex flex-col items-center gap-10">
+                <div className="w-full flex flex-col items-center gap-14">
                     <div className="w-[300px] h-[50px] relative cursor-pointer">
                         <Table>
                             <div className="flex w-full h-full absolute top-[-10] gap-2 justify-center">
                                 <Chair className="mx-2" />
-                                <Chair />
-                                <Chair />
+                                <Chair color="indigo-400" />
+                                <Chair color="indigo-400" />
                                 <Chair className="mx-2" />
                             </div>
                         </Table>
                     </div>
-                    <div className="flex w-full gap-16 justify-center">
-                        <TableContainer number={1} chairsQuantity={21} />
-                        <TableContainer number={2} chairsQuantity={17} />
+                    <div className="flex w-full gap-24 justify-center">
+                        <TableContainer number={1} chairsQuantity={20} />
+                        <TableContainer number={2} chairsQuantity={16} />
                         <TableContainer number={3} chairsQuantity={20} />
                     </div>
                 </div>
