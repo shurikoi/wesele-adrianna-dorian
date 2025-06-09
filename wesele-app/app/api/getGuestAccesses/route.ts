@@ -14,6 +14,7 @@ export async function GET() {
     try {
         await connection();
         const guestAccesses = await GuestAccess.find({}).populate('guests');
+
         return NextResponse.json(guestAccesses, { status: 200 });
     } catch (error) {
         console.error("Error getting guest access:", error);
