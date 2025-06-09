@@ -6,6 +6,7 @@ import Table from "./Table";
 
 export default function TableContainer({ chairsQuantity, number}: { chairsQuantity: number; number: number; width?: number; height?: number; }) {
     const [tableSelected, setTableSelected] = useState(false);
+
     const handleSelectTable = () => {
         setTableSelected(!tableSelected);
     }
