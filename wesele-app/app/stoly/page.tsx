@@ -1,5 +1,6 @@
-'use client'
+'use client';
 
+import { useGuestAccess } from "@/components/contexts/GuestAccessProvider";
 import NoAvailablePage from "@/components/NoAvailablePage";
 import Chair from "@/components/ui/Chair";
 import PageContainer from "@/components/ui/PageContainer";
@@ -11,9 +12,11 @@ import WelcomeContainer from "@/components/WelcomeContainer";
 import { useState } from "react";
 
 export default function Stoly() {
-    const [selectedTable, setSelectedTable] = useState<string | null>(null) 
+    const { isAdmin } = useGuestAccess();
+    const [selectedTable, setSelectedTable] = useState<string | null>(null);
+    console.log(process.env.NODE_ENV)
 
-    if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
+    if (process.env.NODE_ENV !== "production" && !isAdmin) return <NoAvailablePage />;
 
     return (
         <>

@@ -1,3 +1,5 @@
+'use client';
+
 import Agenda from "@/components/Agenda";
 import FAQ from "@/components/FAQ";
 import Menu from "@/components/Menu";
@@ -5,9 +7,12 @@ import PageContainer from "@/components/ui/PageContainer";
 import TitleWelcomeLayout from "@/components/ui/TitleWelcomeLayout";
 import WelcomeContainer from "@/components/WelcomeContainer";
 import NoAvailablePage from "@/components/NoAvailablePage";
+import { useGuestAccess } from "@/components/contexts/GuestAccessProvider";
 
 export default function Szczegoly() {
-    if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
+    const { isAdmin } = useGuestAccess();
+    console.log(!isAdmin);
+    if (process.env.NODE_ENV === "production" || !isAdmin) return <NoAvailablePage />;
     return (
         <>
             <WelcomeContainer imageOptionSrc="8">
