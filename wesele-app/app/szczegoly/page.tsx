@@ -11,8 +11,7 @@ import { useGuestAccess } from "@/components/contexts/GuestAccessProvider";
 
 export default function Szczegoly() {
     const { isAdmin } = useGuestAccess();
-    console.log(!isAdmin);
-    if (process.env.NODE_ENV === "production" || !isAdmin) return <NoAvailablePage />;
+    if (!isAdmin) return <NoAvailablePage />;
     return (
         <>
             <WelcomeContainer imageOptionSrc="8">
