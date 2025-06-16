@@ -14,9 +14,8 @@ import { useState } from "react";
 export default function Stoly() {
     const { isAdmin } = useGuestAccess();
     const [selectedTable, setSelectedTable] = useState<string | null>(null);
-    console.log(process.env.NODE_ENV)
 
-    if (process.env.NODE_ENV !== "production" && !isAdmin) return <NoAvailablePage />;
+    if (process.env.NODE_ENV === "production" || !isAdmin) return <NoAvailablePage />;
 
     return (
         <>
