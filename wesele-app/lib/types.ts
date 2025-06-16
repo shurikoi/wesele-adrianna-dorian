@@ -92,6 +92,7 @@ export const GuestAccessSchema = z.object({
         accommodationResponse: z.boolean().optional(),
     }).optional(),
     forGreeting: z.string().optional(),
+    table: z.string().optional()
 });
 
 export type GuestAccessObject = z.infer<typeof GuestAccessSchema>;

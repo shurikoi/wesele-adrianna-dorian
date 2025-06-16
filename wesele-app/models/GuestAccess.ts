@@ -6,6 +6,7 @@ const GuestAccessSchema = new Schema({
     role: { type: String, enum: ["guest", "admin"], default: "guest" },
     forGreeting: { type: String, required: true },
     guests: [{ type: Schema.Types.ObjectId, ref: 'Guest', required: true }],
+    table: { type: String, enum: ["1", "2", "3", "4"] },
     accompaniment: {
         accompaniment: { type: Boolean },
     },
