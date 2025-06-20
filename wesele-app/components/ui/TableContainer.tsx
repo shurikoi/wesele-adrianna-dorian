@@ -20,7 +20,7 @@ export default function TableContainer({ chairsQuantity, number }: TableContaine
     ) ?? [];
 
     return (
-        <div className="relative w-[90px] h-[550px] cursor-pointer">
+        <div className="relative w-[85px] h-[550px] cursor-pointer">
             <Table>
                 <div className="absolute w-full h-full flex justify-center items-center z-20 font-sfPro font-extrabold text-3xl text-textPeach">
                     {number}
