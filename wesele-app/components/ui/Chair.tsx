@@ -27,8 +27,8 @@ export default function Chair({
     }
     return (
         <div className={`relative h-[15px] w-[15px] rounded-xl ${isMatched ? "bg-orange-500" : color} ${className}`}>
-            {isMatched && <div className={`absolute ${sideClasses[side]} bg-orange-500/40 px-2 ${classNameLabel}`}>{chairData?.guestId.name.split(" ")[0].startsWith("Osoba") ? "Osoba towarzyszącą": chairData?.guestId.name.split(" ")[0]}</div>}
-            {label && <div className={`absolute ${color}/40 bottom-2 text-sm px-2 ${classNameLabel}`}>{label}</div>}
+            {isMatched && <div className={`absolute ${sideClasses[side]} bg-orange-500/40 px-2 z-10 ${classNameLabel}`}>{chairData?.guestId.name.split(" ")[0].startsWith("Osoba") ? "Osoba towarzyszącą": chairData?.guestId.name.split(" ")[0]}</div>}
+            {label && <div className={`absolute ${color}/40 bottom-2 text-sm px-2 z-10 ${classNameLabel}`}>{label}</div>}
         </div>
     );
 }
