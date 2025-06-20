@@ -40,7 +40,8 @@ export type StatesRSVP = 'questions' | 'summary';
 export const guest = z.object({
     name: z.string(),
     type: z.enum(['adult', 'child']).optional(),
-    table: z.string().uuid().optional(), // do i really need .uuid()?
+    table: z.string().optional(), // do i really need .uuid()?
+    chair: z.string().optional(), // do i really need .uuid()?
     _id: z.string().optional(),
 });
 
@@ -96,6 +97,13 @@ export const GuestAccessSchema = z.object({
 });
 
 export type GuestAccessObject = z.infer<typeof GuestAccessSchema>;
+
+export const tablesSchema = z.object({
+    tableNumber: z.number(),
+    guestId: NewGuestObjectSchema,
+    chair: z.number(),
+})
+export type TablesObject = z.infer<typeof tablesSchema>;
 
 //  ______________________________________________________________________
 

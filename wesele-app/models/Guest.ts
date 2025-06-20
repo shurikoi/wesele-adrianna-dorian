@@ -4,6 +4,7 @@ const GuestSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, enum: ["adult", "child"], default: 'adult', required: true },
   table: { type: String, enum: ["1", "2", "3", "4"], default: 'null' },
+  chair: { type: String },
   // accompaniment: {
   //   accompaniment: { type: Boolean },
   //   // accompanimentTime: { type: Date, default: null }

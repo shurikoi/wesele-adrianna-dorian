@@ -23,7 +23,6 @@ export default function GuestAccessesProvider({ children }: ModalProviderProps) 
         queryKey: ['guestAccesses'],
         queryFn: getGuestAccesses
     });
-    console.log(guestAccesses);
     if (isLoading) return <Loader />;
 
     return (

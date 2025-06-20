@@ -7,6 +7,7 @@ const GuestAccessSchema = new Schema({
     forGreeting: { type: String, required: true },
     guests: [{ type: Schema.Types.ObjectId, ref: 'Guest', required: true }],
     table: { type: String, enum: ["1", "2", "3", "4"] },
+    chair: { type: String },
     accompaniment: {
         accompaniment: { type: Boolean },
     },
