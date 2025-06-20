@@ -1,24 +1,21 @@
 'use client';
 
-import { useGuestAccess } from "@/components/contexts/GuestAccessProvider";
+import TablesProvider from "@/components/contexts/TablesProvider";
 import NoAvailablePage from "@/components/NoAvailablePage";
 import Chair from "@/components/ui/Chair";
 import PageContainer from "@/components/ui/PageContainer";
 import Table from "@/components/ui/Table";
 import TableContainer from "@/components/ui/TableContainer";
-import TableInfo from "@/components/ui/TableInfo";
 import TitleWelcomeLayout from "@/components/ui/TitleWelcomeLayout";
 import WelcomeContainer from "@/components/WelcomeContainer";
-import { useState } from "react";
 
 export default function Stoly() {
-    const { isAdmin } = useGuestAccess();
-    const [selectedTable, setSelectedTable] = useState<string | null>(null);
 
-    if (process.env.NODE_ENV === "production" || !isAdmin) return <NoAvailablePage />;
+    // if (process.env.NODE_ENV === "production" || !isAdmin) return <NoAvailablePage />;
+    if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
 
     return (
-        <>
+        <TablesProvider>
             <WelcomeContainer imageOptionSrc="1">
                 <TitleWelcomeLayout title="Stoły" description="sala weselna" />
             </WelcomeContainer>
@@ -35,13 +32,13 @@ export default function Stoly() {
                         </Table>
                     </div>
                     <div className="flex w-full gap-24 justify-center">
-                        <TableContainer selectedTable={selectedTable} setSelectedTable={setSelectedTable} number={1} chairsQuantity={20} />
-                        <TableContainer selectedTable={selectedTable} setSelectedTable={setSelectedTable} number={2} chairsQuantity={16} />
-                        <TableContainer selectedTable={selectedTable} setSelectedTable={setSelectedTable} number={3} chairsQuantity={20} />
+                        <TableContainer number={1} chairsQuantity={18} />
+                        <TableContainer number={2} chairsQuantity={16} />
+                        <TableContainer number={3} chairsQuantity={21} />
                     </div>
                 </div>
-                <TableInfo selectedTable={selectedTable}></TableInfo>
+                {/* <TableInfo selectedTable={selectedTable}></TableInfo> */}
             </PageContainer>
-        </>
+        </TablesProvider>
     );
 };

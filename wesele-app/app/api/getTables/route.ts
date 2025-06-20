@@ -6,8 +6,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
     try {
         await connection();
-        const result = await Table.find({}).populate("guestId");
-        return NextResponse.json({ result });
+        const tables = await Table.find({}).populate("guestId");
+        return NextResponse.json({ tables });
 
     } catch (error) {
         console.error("Error setting table:", error);

@@ -98,6 +98,13 @@ export const GuestAccessSchema = z.object({
 
 export type GuestAccessObject = z.infer<typeof GuestAccessSchema>;
 
+export const tablesSchema = z.object({
+    tableNumber: z.number(),
+    guestId: NewGuestObjectSchema,
+    chair: z.number(),
+})
+export type TablesObject = z.infer<typeof tablesSchema>;
+
 //  ______________________________________________________________________
 
 export interface DropDownContainer {
