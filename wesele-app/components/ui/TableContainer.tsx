@@ -34,6 +34,7 @@ export default function TableContainer({ chairsQuantity, number }: TableContaine
 
                         return (
                             <Chair
+                                side="right"
                                 key={`left-${chairIndex}`}
                                 chairData={chairData}
                             />
@@ -49,6 +50,7 @@ export default function TableContainer({ chairsQuantity, number }: TableContaine
 
                         return (
                             <Chair
+                                side="left"
                                 key={`right-${chairIndex}`}
                                 chairData={chairData}
                             />

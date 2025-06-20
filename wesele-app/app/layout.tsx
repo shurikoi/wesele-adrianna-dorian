@@ -12,6 +12,7 @@ import TanstackProvider from "@/components/contexts/TanstackProvider";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SkeletonTheme } from "react-loading-skeleton";
 import GuestAccessesProvider from "@/components/contexts/GuestAccessesProvider";
+import TablesProvider from "@/components/contexts/TablesProvider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -43,15 +44,17 @@ export default function RootLayout({
                         <GuestAccessesProvider>
                             <GuestAccessProvider>
                                 <ModalProvider>
-                                    <Toaster />
-                                    <SkeletonTheme baseColor="#E8DCCB" highlightColor="#D6C5B1">
-                                        <div id="modals-root" className="fixed z-50" />
-                                        <div className="relative">
-                                            <Header className="p-8 absolute top-0 left-0 z-40 w-full" />
-                                            {children}
-                                            <Analytics />
-                                        </div>
-                                    </SkeletonTheme>
+                                    <TablesProvider>
+                                        <Toaster />
+                                        <SkeletonTheme baseColor="#E8DCCB" highlightColor="#D6C5B1">
+                                            <div id="modals-root" className="fixed z-50" />
+                                            <div className="relative">
+                                                <Header className="p-8 absolute top-0 left-0 z-40 w-full" />
+                                                {children}
+                                                <Analytics />
+                                            </div>
+                                        </SkeletonTheme>
+                                    </TablesProvider>
                                 </ModalProvider>
                             </GuestAccessProvider>
                         </GuestAccessesProvider>

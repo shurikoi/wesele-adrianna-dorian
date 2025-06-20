@@ -7,11 +7,11 @@ import { useQuery } from "@tanstack/react-query";
 import fetchTables from "@/utils/fetchTables";
 
 type TableContextType = {
-    tables: TablesObject[] | null;
+    tables: TablesObject[] | [];
 };
 
 const TablesContext = createContext<TableContextType>({
-    tables: null,
+    tables: [],
 });
 
 interface ModalProviderProps {
