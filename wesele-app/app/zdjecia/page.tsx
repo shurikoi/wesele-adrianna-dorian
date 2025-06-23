@@ -25,7 +25,7 @@ export default function Zdjecia() {
                     <div className="flex flex-col gap-16">
                         <Callout style="antiquewhite" className="font-sfPro text-lg">
                             Publikuj oraz przeglądaj zdjęcia z naszego wyjątkowego dnia!
-                            <button className="px-7 py-2 rounded-full bg-orange-200 border border-orange-500" onClick={() => window.open('https://drive.google.com/drive/folders/1PH8aaGxKacJg_84zEpwFubwKdUo0JPlQ?usp=sharing', '_blank')}>Przejdź</button>
+                            <button className="px-7 py-2 rounded-full bg-orange-200 border border-orange-500" onClick={() => window.open('https://photos.app.goo.gl/qfdjLgj21cHPdut56', '_blank')}>Przejdź</button>
                         </Callout>
                     </div>
                 ) : (
