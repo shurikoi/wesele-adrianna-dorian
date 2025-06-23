@@ -1,23 +1,38 @@
-import NoAvailablePage from "@/components/NoAvailablePage";
+"use client";
+
+import { useGuestAccess } from '@/components/contexts/GuestAccessProvider';
+import { useModal } from '@/components/contexts/ModalProvider';
 import Callout from "@/components/ui/Callout";
 import PageContainer from "@/components/ui/PageContainer";
 import TitleWelcomeLayout from "@/components/ui/TitleWelcomeLayout";
 import WelcomeContainer from "@/components/WelcomeContainer";
+import { useEffect } from 'react';
 
 export default function Zdjecia() {
-    if (process.env.NODE_ENV === "production") return <NoAvailablePage />;
+    const { guestAccess } = useGuestAccess();
+    const { openModal } = useModal();
+    useEffect(() => {
+        if (!guestAccess) openModal("Guest");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     return (
         <>
             <WelcomeContainer imageOptionSrc="6">
                 <TitleWelcomeLayout title="Zdjęcia" description="przedlądaj i wysyłaj zdjęcia" />
             </WelcomeContainer>
             <PageContainer>
-                <div className="flex flex-col gap-16">
+                {guestAccess ? (
+                    <div className="flex flex-col gap-16">
+                        <Callout style="antiquewhite" className="font-sfPro text-lg">
+                            Publikuj oraz przeglądaj zdjęcia z naszego wyjątkowego dnia!
+                            <button className="px-7 py-2 rounded-full bg-orange-200 border border-orange-500" onClick={() => window.open('https://flic.kr/g/3h41FU', '_blank')}>Przejdź</button>
+                        </Callout>
+                    </div>
+                ) : (
                     <Callout style="antiquewhite" className="font-sfPro text-lg">
-                        Przeglądaj zdjęcia z naszego wyjątkowego dnia!
-                        <button className="p-2 rounded-lg">Przeglądaj</button>
+                        Nie masz dostępu do tej strony
                     </Callout>
-                </div>
+                )}
             </PageContainer>
         </>
     );
